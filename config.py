@@ -4,6 +4,7 @@ import os
 WIN_SIZE = (1080, 720)
 BG_COLOR = pg.Color('cyan')
 FPS = 60
+GRAVITY = 10
 
 # PICS
 current_dir = os.path.dirname(__file__)
