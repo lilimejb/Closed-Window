@@ -1,7 +1,8 @@
 import pygame as pg
 import os
 
-WIN_SIZE = (1080, 720)
+TILE_SIZE = 64
+WIN_SIZE = (16 * TILE_SIZE, 9 * TILE_SIZE)
 BG_COLOR = pg.Color('cyan')
 FPS = 60
 GRAVITY = 10
@@ -93,8 +94,7 @@ BLOCK_ASSETS = {'ground': [os.path.join(blocks_sprites, 'ground.png'),
                 'windows': [os.path.join(blocks_sprites, 'window.png'),
                             os.path.join(blocks_sprites, 'window-bars.png')]}
 
-BACKGROUNDS = {'first': os.path.join(backgrounds, 'background.png'),
-               'second': os.path.join(backgrounds, 'middleground.png')}
+BACKGROUND = os.path.join(backgrounds, 'background.bmp')
 
 level_items = os.path.join(images, 'level_items')
 BARREL = os.path.join(level_items, 'barrel.png')
@@ -184,3 +184,11 @@ COINS = [os.path.join(coins, 'Coin_Blue.png'),
          os.path.join(coins, 'Coin_Green.png'),
          os.path.join(coins, 'Coin_Purple.png'),
          os.path.join(coins, 'Coin_Red.png')]
+
+MAP_BLOCKS = {'B': BLOCK_ASSETS['ground'][0],
+              'C': COINS[0],
+              'S': SPIKE,
+              'F': FOOD[0]}
+
+SOLID_BLOCKS = 'BS'
+CONSUMABLES = 'FC'

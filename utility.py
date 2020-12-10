@@ -10,6 +10,11 @@ class Solid_Block(Sprite):
         super().__init__(x, y, size, speed, image)
 
 
+class Consumable(Sprite):
+    def __init__(self, x=None, y=None, size=100, speed=10, image=BLOCK_ASSETS['ground'][0]):
+        super().__init__(x, y, size, speed, image)
+
+
 class Spike(Solid_Block):
     def __init__(self, x=None, y=None, damage=100, size=100, speed=10, image=SPIKE):
         if x is None:
@@ -20,7 +25,7 @@ class Spike(Solid_Block):
         self.damage = damage
 
 
-class Coin(Sprite):
+class Coin(Consumable):
     def __init__(self, x=None, y=None, value=5, size=50, speed=10, image=COINS[0]):
         if x is None:
             x = random.randint(0, WIN_SIZE[0] - size)
@@ -42,7 +47,7 @@ class Coin(Sprite):
         self.rect.y = self.spawn[1] + not_true_y
 
 
-class Medicine(Sprite):
+class Medicine(Consumable):
     def __init__(self, x=None, y=None, healing=500, size=50, speed=10, image=FOOD[0]):
         if x is None:
             x = random.randint(0, WIN_SIZE[0] - size)
