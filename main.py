@@ -1,6 +1,7 @@
 from config import *
 import pygame as pg
 from player import Player
+from utility import Coin, Medicine, Solid_Block, Spike
 
 clock = pg.time.Clock()
 
