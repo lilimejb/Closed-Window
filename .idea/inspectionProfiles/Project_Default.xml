@@ -1,0 +1,60 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyChainedComparisonsInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoreConstantInTheMiddle" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="3">
+            <item index="0" class="java.lang.String" itemvalue="pymorphy2" />
+            <item index="1" class="java.lang.String" itemvalue="PyQt5" />
+            <item index="2" class="java.lang.String" itemvalue="matplotlib" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="W191" />
+          <option value="E101" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N801" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="str.replace" />
+          <option value="main_files.PygameCell.life.Life.cell_size" />
+          <option value="main_files.PygameCell.life.Life.left" />
+          <option value="main_files.PygameCell.life.Life.top" />
+          <option value="main_files.PygameCell.life.Life.width" />
+          <option value="main_files.PygameCell.life.Life.height" />
+          <option value="main_files.PygameCell.life.Life.get_click" />
+          <option value="main_files.PygameCell.minesweeper.Life.board" />
+          <option value="main_files.PygameCell.minesweeper.Life.height" />
+          <option value="main_files.PygameCell.minesweeper.Life.*" />
+          <option value="main_files.PygameCell.minesweeper.Minesweeper.get_click" />
+          <option value="main_files.PygameCell.minesweeper.Minesweeper.cell_size" />
+          <option value="main_files.PygameCell.minesweeper.Minesweeper.*" />
+          <option value="main_files.PygameCell.lines.Lines.cell_size" />
+          <option value="main_files.PygameCell.lines.Lines.left" />
+          <option value="main_files.PygameCell.lines.Lines.top" />
+          <option value="main_files.PygameCell.lines.Lines.width" />
+          <option value="main_files.PygameCell.lines.Lines.height" />
+          <option value="main_files.PygameCell.lines.Lines.board" />
+          <option value="main_files.PygameCell.lines.Lines.get_click" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
