@@ -83,6 +83,7 @@ class Game:
         self.player.update(self.jump, self.fall, self.left, self.right, ms)
         self.help.update()
         self.coins.update()
+        pg.display.set_caption(f'Player`s money: {self.player.money} HP: {self.player.hp}')
 
     def render(self):
         self.screen.blit(self.background, (0, 0))

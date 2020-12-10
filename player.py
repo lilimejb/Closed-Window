@@ -23,6 +23,26 @@ class Player(Sprite):
     def update(self, jump, fall, left, right, ms):
         self.move(jump, fall, left, right)
         self.border_check()
+        self.collide_check(ms)
+        if self.hp > self.max_hp:
+            self.hp = self.max_hp
+        elif self.hp <= 0:
+            self.respawn()
+
+    def collide_check(self, ms):
+        for coin in self.coins:
+            if pg.sprite.collide_rect(self, coin):
+                self.money += coin.value
+                coin.kill()
+
+        for enemy in self.enemies:
+            if pg.sprite.collide_rect(self, enemy):
+                self.hp -= self.take_damage(ms, enemy.damage)
+
+        for food in self.help:
+            if pg.sprite.collide_rect(self, food):
+                self.hp += food.heal
+                food.kill()
 
     def move(self, jump, fall, left, right):
         if left == right:
@@ -40,9 +60,13 @@ class Player(Sprite):
         else:
             self.rect.y += self.speed
 
+    def respawn(self):
+        self.__init__()
+
     def take_damage(self, ms, damage):
         if self.cooldown > 0:
             self.cooldown -= ms
+            return 0
         if self.cooldown <= 0:
             self.cooldown = 0
         if self.cooldown == 0:
