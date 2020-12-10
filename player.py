@@ -4,6 +4,11 @@ from sprite import Sprite
 
 
 class Player(Sprite):
+    coins = None
+    enemies = None
+    help = None
+    solid_blocks = None
+
     def __init__(self, x=0, y=0, size=100, speed=10, image=PLAYER_ASSETS['idle'][0]):
         super().__init__(x, y, size, speed, image)
         self.money = 0
@@ -16,7 +21,10 @@ class Player(Sprite):
         self.cooldown = self.damage_delay
 
     def update(self, jump, fall, left, right, ms):
-        print(jump, fall, left, right, ms)
+        self.move(jump, fall, left, right)
+        self.border_check()
+
+    def move(self, jump, fall, left, right):
         if left == right:
             pass
         elif left:
@@ -31,7 +39,6 @@ class Player(Sprite):
             self.rect.y -= self.speed
         else:
             self.rect.y += self.speed
-        self.border_check()
 
     def take_damage(self, ms, damage):
         if self.cooldown > 0:

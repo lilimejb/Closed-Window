@@ -16,8 +16,16 @@ class Game:
         self.jump = False
         self.fall = False
         self.objects = pg.sprite.Group()
+        self.coins = pg.sprite.Group()
+        self.enemies = pg.sprite.Group()
+        self.solid_blocks = pg.sprite.Group()
+        self.help = pg.sprite.Group()
+        Player.help = self.help
+        Player.coins = self.coins
+        Player.enemies = self.enemies
+        Player.solid_blocks = self.solid_blocks
         self.player = Player()
-        self.objects.add(self.player)
+        self.player.add(self.objects)
 
     def events(self):
         events = pg.event.get()
