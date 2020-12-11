@@ -6,7 +6,7 @@ from math import radians, sin
 
 
 class Solid_Block(Sprite):
-    def __init__(self, x=None, y=None, size=100, speed=10, image=BLOCK_ASSETS['ground'][0]):
+    def __init__(self, x=None, y=None, size=64, speed=10, image=BLOCK_ASSETS['ground'][0]):
         super().__init__(x, y, size, speed, image)
 
 

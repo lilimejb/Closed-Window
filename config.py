@@ -5,7 +5,7 @@ TILE_SIZE = 64
 WIN_SIZE = (16 * TILE_SIZE, 9 * TILE_SIZE)
 BG_COLOR = pg.Color('cyan')
 FPS = 60
-GRAVITY = 10
+GRAVITY = .5
 
 # PICS
 current_dir = os.path.dirname(__file__)

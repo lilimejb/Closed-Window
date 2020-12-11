@@ -17,18 +17,5 @@ class Sprite(pg.sprite.Sprite):
     def draw(self, surface):
         surface.blit(self.image, self.rect.topleft)
 
-    def border_check(self):
-        if self.rect.left < 0:
-            self.rect.left = 0
-
-        if self.rect.right > WIN_SIZE[0]:
-            self.rect.right = WIN_SIZE[0]
-
-        if self.rect.top < 0:
-            self.rect.top = 0
-
-        if self.rect.bottom > WIN_SIZE[1]:
-            self.rect.bottom = WIN_SIZE[1]
-
     def update(self, *args):
         pass
