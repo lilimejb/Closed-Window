@@ -8,6 +8,7 @@ class Player(Sprite):
     help = None
     solid_blocks = None
     exits = None
+    buffs = None
 
     def __init__(self, x=300, y=300, size=64, speed=.2, image=PLAYER_ASSETS['idle'][0]):
         super().__init__(x, y, size, speed, image)
@@ -103,6 +104,12 @@ class Player(Sprite):
             if pg.sprite.collide_rect(self, food):
                 self.hp += self.take_hp(food.heal)
                 food.kill()
+
+        for buff in self.buffs:
+            if pg.sprite.collide_rect(self, buff):
+                if buff.name == 'Speed_boost':
+                    self.speed_max += buff.boost
+                buff.kill()
 
         for block in self.exits:
             if pg.sprite.collide_rect(self, block) and not self.coins:

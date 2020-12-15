@@ -185,6 +185,13 @@ COINS = [os.path.join(coins, 'Coin_Blue.png'),
          os.path.join(coins, 'Coin_Purple.png'),
          os.path.join(coins, 'Coin_Red.png')]
 
+buffs = os.path.join(consumable, 'buffs')
+BUFFS = [os.path.join(buffs, 'Damage_boost.png'),
+         os.path.join(buffs, 'Heal_boost.png'),
+         os.path.join(buffs, 'Speed_boost.png'),
+         os.path.join(buffs, 'Jump_boost.png'),
+         os.path.join(buffs, 'Gold_boost.png')]
+
 LEVELS = ['lvl1', 'lvl2']
 
 MAP_BLOCKS = {'B': BLOCK_ASSETS['ground'][0],
@@ -194,7 +201,8 @@ MAP_BLOCKS = {'B': BLOCK_ASSETS['ground'][0],
               'E': WELL,
               'P': PLAYER_ASSETS['idle'][0],
               'L': BLOCK_ASSETS['corner'][0],
-              'R': BLOCK_ASSETS['corner'][1]}
+              'R': BLOCK_ASSETS['corner'][1],
+              'H': BUFFS[2]}
 
 SOLID_BLOCKS = 'BLR'
-CONSUMABLES = 'FC'
+CONSUMABLES = 'FCH'

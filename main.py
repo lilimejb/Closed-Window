@@ -1,7 +1,7 @@
 from config import *
 import pygame as pg
 from player import Player
-from utility import Coin, Medicine, Solid_Block, Spike, Level_end
+from utility import *
 
 clock = pg.time.Clock()
 
@@ -25,44 +25,40 @@ class Game:
         self.solid_blocks = pg.sprite.Group()
         self.help = pg.sprite.Group()
         self.exits = pg.sprite.Group()
+        self.buffs = pg.sprite.Group()
         self.current_level = 0
         self.load_map()
         self.player.help = self.help
         self.player.coins = self.coins
         self.player.enemies = self.enemies
         self.player.exits = self.exits
+        self.player.buffs = self.buffs
+        self.player.solid_blocks = self.solid_blocks
+
+    def load_sprites(self):
+        self.objects = pg.sprite.Group()
+        self.coins = pg.sprite.Group()
+        self.enemies = pg.sprite.Group()
+        self.solid_blocks = pg.sprite.Group()
+        self.help = pg.sprite.Group()
+        self.exits = pg.sprite.Group()
+        self.buffs = pg.sprite.Group()
+        self.load_map()
+        self.player.help = self.help
+        self.player.coins = self.coins
+        self.player.enemies = self.enemies
+        self.player.exits = self.exits
+        self.player.buffs = self.buffs
         self.player.solid_blocks = self.solid_blocks
 
     def restart(self):
-        self.objects = pg.sprite.Group()
-        self.coins = pg.sprite.Group()
-        self.enemies = pg.sprite.Group()
-        self.solid_blocks = pg.sprite.Group()
-        self.help = pg.sprite.Group()
-        self.exits = pg.sprite.Group()
+        self.load_sprites()
         self.current_level = 0
-        self.load_map()
-        self.player.help = self.help
-        self.player.coins = self.coins
-        self.player.enemies = self.enemies
-        self.player.exits = self.exits
-        self.player.solid_blocks = self.solid_blocks
 
     def start_next_level(self, hp, money):
-        self.objects = pg.sprite.Group()
-        self.coins = pg.sprite.Group()
-        self.enemies = pg.sprite.Group()
-        self.solid_blocks = pg.sprite.Group()
-        self.help = pg.sprite.Group()
-        self.exits = pg.sprite.Group()
-        self.load_map()
+        self.load_sprites()
         self.player.money = money
         self.player.hp = hp
-        self.player.help = self.help
-        self.player.coins = self.coins
-        self.player.enemies = self.enemies
-        self.player.exits = self.exits
-        self.player.solid_blocks = self.solid_blocks
 
     def events(self):
         events = pg.event.get()
@@ -111,6 +107,9 @@ class Game:
                             elif letter == 'F':
                                 block = Medicine(*pos, image=image)
                                 block.add(self.help)
+                            elif letter == 'H':
+                                block = Speed_boost(*pos, image=image)
+                                self.buffs.add(block)
                         if letter == 'E':
                             block = Level_end(*pos, image=image)
                             block.add(self.exits)
@@ -124,6 +123,7 @@ class Game:
         end = self.player.update(self.jump, self.fall, self.left, self.right, ms)
         self.help.update()
         self.coins.update()
+        self.buffs.update()
         pg.display.set_caption(f'Player`s money: {self.player.money} HP: {self.player.hp}')
         if end == 'end':
             self.current_level = (self.current_level + 1) % 2
