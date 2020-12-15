@@ -2,6 +2,7 @@ from config import *
 import pygame as pg
 from player import Player
 from utility import *
+from enemy import *
 
 clock = pg.time.Clock()
 
@@ -28,6 +29,9 @@ class Game:
         self.buffs = pg.sprite.Group()
         self.current_level = 0
         self.load_map()
+        for enemy in self.enemies:
+            if enemy.name in ('bearded'):
+                enemy.solid_blocks = self.solid_blocks
         self.player.help = self.help
         self.player.coins = self.coins
         self.player.enemies = self.enemies
@@ -125,6 +129,9 @@ class Game:
                         if letter == 'S':
                             block = Spike(*pos, image=image)
                             block.add(self.enemies)
+                        if letter == 'V':
+                            block = Bearded(*pos, image=image)
+                            block.add(self.enemies)
                         block.add(self.objects)
 
     def update(self):
@@ -133,6 +140,7 @@ class Game:
         self.help.update()
         self.coins.update()
         self.buffs.update()
+        self.enemies.update()
         pg.display.set_caption(f'Player`s money: {self.player.money} HP: {self.player.hp}')
         if end == 'end':
             self.current_level = (self.current_level + 1) % 2

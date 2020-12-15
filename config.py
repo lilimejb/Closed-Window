@@ -175,9 +175,6 @@ FOOD = [os.path.join(heal, 'Apple.png'),
         os.path.join(heal, 'Whiskey.png'),
         os.path.join(heal, 'Wine.png')]
 
-enemies = os.path.join(images, 'enemies')
-SPIKE = os.path.join(enemies, 'spike.png')
-
 coins = os.path.join(consumable, 'coins')
 COINS = [os.path.join(coins, 'Coin_Blue.png'),
          os.path.join(coins, 'Coin_Gold.png'),
@@ -192,18 +189,33 @@ BUFFS = [os.path.join(buffs, 'Damage_boost.png'),
          os.path.join(buffs, 'Jump_boost.png'),
          os.path.join(buffs, 'Jump_down.png')]
 
+# ВРАГИ
+
+enemies = os.path.join(images, 'enemies')
+bearded = os.path.join(enemies, 'bearded')
+bearded_idle = os.path.join(bearded, 'bearded_idle')
+
+ENEMIES = {'spike': os.path.join(enemies, 'spike.png'),
+           'bearded_idle': [os.path.join(bearded_idle, 'idle1.png'),
+                            os.path.join(bearded_idle, 'idle2.png'),
+                            os.path.join(bearded_idle, 'idle3.png'),
+                            os.path.join(bearded_idle, 'idle4.png'),
+                            os.path.join(bearded_idle, 'idle5.png')]}
+
+
 LEVELS = ['lvl1', 'lvl2']
 
 MAP_BLOCKS = {'B': BLOCK_ASSETS['ground'][0],
               'C': COINS[0],
-              'S': SPIKE,
+              'S': ENEMIES['spike'],
               'F': FOOD[0],
               'E': WELL,
               'P': PLAYER_ASSETS['idle'][0],
               'L': BUFFS[1],
               'H': BUFFS[2],
               'J': BUFFS[3],
-              'R': BUFFS[4]}
+              'R': BUFFS[4],
+              'V': ENEMIES['bearded_idle'][0]}
 
 SOLID_BLOCKS = 'B'
 CONSUMABLES = 'FCHJLR'

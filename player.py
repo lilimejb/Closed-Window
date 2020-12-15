@@ -1,5 +1,5 @@
 from config import *
-from sprite import Sprite
+from main_classes import Sprite
 
 
 class Player(Sprite):
