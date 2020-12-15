@@ -19,55 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37043318-4c84-473d-b7ac-3851f2a3e807" name="Default Changelist" comment="">
+    <list default="true" id="37043318-4c84-473d-b7ac-3851f2a3e807" name="Default Changelist" comment="кнопка R(restart)">
+      <change afterPath="$PROJECT_DIR$/lvl2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/ground-b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/ground-corner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/ground-right-corner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/ground-shadow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/ground-wall-b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/ground-wall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/ground-wood-legs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/ground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/left-corner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/left-roof.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/left-slope.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/right-corner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/right-roof.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/right-slope.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/roof.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/shadow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/slope.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/stairs-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/stairs-mirror-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/stairs-mirror-right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/stairs-mirror.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/stairs-right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/stairs-wall-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/stairs-wall-mirror-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/stairs-wall-mirror-right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/stairs-wall-mirror.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/stairs-wall-right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/stairs-wall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/stairs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/top-left-wood.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/top-right-wood.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/top-wood.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/wall-b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/wall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/window-bars.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/window.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks/wood-legs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/ground.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/blocks_sprites/ground.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/enemies/spike.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/enemies/spike.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/images/hero_sprites/Idle/idle1.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/hero_sprites/Idle/idle1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Idle/idle2.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/hero_sprites/Idle/idle2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Idle/idle3.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/hero_sprites/Idle/idle3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Idle/idle4.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/hero_sprites/Idle/idle4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Idle/idle5.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/hero_sprites/Idle/idle5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Idle/idle6.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/hero_sprites/Idle/idle6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Idle/idle7.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/hero_sprites/Idle/idle7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Idle/idle8.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/hero_sprites/Idle/idle8.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lvl1" beforeDir="false" afterPath="$PROJECT_DIR$/lvl1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utility.py" beforeDir="false" afterPath="$PROJECT_DIR$/utility.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,12 +38,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/player.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="1lSEEKydrjnPYhaLQAlu6CAClIt" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -123,6 +91,35 @@
       <option name="presentableId" value="Default" />
       <updated>1607581979841</updated>
     </task>
+    <task id="LOCAL-00001" summary="новые ассеты">
+      <created>1607694909359</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607694909359</updated>
+    </task>
+    <task id="LOCAL-00002" summary="реформат">
+      <created>1607933904748</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607933904748</updated>
+    </task>
+    <task id="LOCAL-00003" summary="классная работа">
+      <created>1607935308969</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1607935308969</updated>
+    </task>
+    <task id="LOCAL-00004" summary="кнопка R(restart)">
+      <created>1607936548003</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607936548003</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -135,48 +132,65 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="новые ассеты" />
+    <MESSAGE value="реформат" />
+    <MESSAGE value="классная работа" />
+    <MESSAGE value="кнопка R(restart)" />
+    <option name="LAST_COMMIT_MESSAGE" value="кнопка R(restart)" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="545" y="210" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607607923003">
+    <state x="545" y="210" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607937072135">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="545" y="210" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1607607923003" />
+    <state x="545" y="210" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1607937072135" />
+    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1608021766918">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1608021766918" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1607662750627">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1607662750627" />
-    <state width="1515" height="204" key="GridCell.Tab.0.bottom" timestamp="1607694751627">
+    <state width="1515" height="204" key="GridCell.Tab.0.bottom" timestamp="1608022994619">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="204" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607694751627" />
-    <state width="1515" height="204" key="GridCell.Tab.0.center" timestamp="1607694751627">
+    <state width="1515" height="204" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608022994619" />
+    <state width="1515" height="204" key="GridCell.Tab.0.center" timestamp="1608022994619">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="204" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607694751627" />
-    <state width="1515" height="204" key="GridCell.Tab.0.left" timestamp="1607694751627">
+    <state width="1515" height="204" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608022994619" />
+    <state width="1515" height="204" key="GridCell.Tab.0.left" timestamp="1608022994619">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="204" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607694751627" />
-    <state width="1515" height="204" key="GridCell.Tab.0.right" timestamp="1607694751627">
+    <state width="1515" height="204" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608022994619" />
+    <state width="1515" height="204" key="GridCell.Tab.0.right" timestamp="1608022994619">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="204" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607694751627" />
-    <state width="1515" height="253" key="GridCell.Tab.1.bottom" timestamp="1607692491894">
+    <state width="1515" height="204" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608022994619" />
+    <state width="1515" height="253" key="GridCell.Tab.1.bottom" timestamp="1607948473160">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="253" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607692491894" />
-    <state width="1515" height="253" key="GridCell.Tab.1.center" timestamp="1607692491893">
+    <state width="1515" height="253" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607948473160" />
+    <state width="1515" height="253" key="GridCell.Tab.1.center" timestamp="1607948473160">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="253" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1607692491893" />
-    <state width="1515" height="253" key="GridCell.Tab.1.left" timestamp="1607692491893">
+    <state width="1515" height="253" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1607948473160" />
+    <state width="1515" height="253" key="GridCell.Tab.1.left" timestamp="1607948473160">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="253" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1607692491893" />
-    <state width="1515" height="253" key="GridCell.Tab.1.right" timestamp="1607692491894">
+    <state width="1515" height="253" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1607948473160" />
+    <state width="1515" height="253" key="GridCell.Tab.1.right" timestamp="1607948473160">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="253" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1607692491894" />
+    <state width="1515" height="253" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1607948473160" />
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1607936551119">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607936551119" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607608727465">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
