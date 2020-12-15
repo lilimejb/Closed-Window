@@ -20,11 +20,17 @@ class Player(Sprite):
         self.image_flipped = pg.transform.flip(self.image, True, False)
         self.speed_y = 0
         self.speed_x = 0
+        self.speed_start = 2
         self.speed_max = 5
-        self.jump_power = 12
+        self.speed_max_buffed = 10
+        self.jump_power_start = self.jump_power = 12
+        self.jump_power_max_buffed = 18
         self.on_the_ground = False
         self.damage_delay = 1000
         self.cooldown = self.damage_delay
+
+    def set_position(self, x, y):
+        self.rect.x, self.rect.y = x, y
 
     def update(self, jump, fall, left, right, ms):
         self.move(jump, fall, left, right)
@@ -98,7 +104,6 @@ class Player(Sprite):
         for enemy in self.enemies:
             if pg.sprite.collide_rect(self, enemy):
                 self.hp -= self.take_damage(ms, enemy.damage)
-                print('da')
 
         for food in self.help:
             if pg.sprite.collide_rect(self, food):
@@ -109,10 +114,24 @@ class Player(Sprite):
             if pg.sprite.collide_rect(self, buff):
                 if buff.name == 'Speed_boost':
                     self.speed_max += buff.boost
+                    if self.speed_max > self.speed_max_buffed:
+                        self.speed_max = self.speed_max_buffed
+                if buff.name == 'Jump_boost':
+                    self.jump_power += buff.boost
+                    if self.jump_power > self.jump_power_max_buffed:
+                        self.jump_power = self.jump_power_max_buffed
+                if buff.name == 'Speed_down':
+                    self.speed_max -= buff.boost
+                    if self.speed_max < self.speed_start:
+                        self.speed_max = self.speed_start
+                if buff.name == 'Jump_down':
+                    self.jump_power -= buff.boost
+                    if self.jump_power < self.jump_power_start:
+                        self.jump_power = self.jump_power_start
                 buff.kill()
 
         for block in self.exits:
-            if pg.sprite.collide_rect(self, block) and not self.coins:
+            if pg.sprite.collide_rect(self, block) and len(self.coins) < 2:
                 return 'end'
 
     def respawn(self):

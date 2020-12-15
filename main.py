@@ -18,7 +18,7 @@ class Game:
         self.left = False
         self.jump = False
         self.fall = False
-        self.player = None
+        self.player = Player()
         self.objects = pg.sprite.Group()
         self.coins = pg.sprite.Group()
         self.enemies = pg.sprite.Group()
@@ -55,10 +55,8 @@ class Game:
         self.load_sprites()
         self.current_level = 0
 
-    def start_next_level(self, hp, money):
+    def start_next_level(self):
         self.load_sprites()
-        self.player.money = money
-        self.player.hp = hp
 
     def events(self):
         events = pg.event.get()
@@ -95,8 +93,8 @@ class Game:
                         pos = (x * TILE_SIZE, y * TILE_SIZE)
                         image = MAP_BLOCKS[letter]
                         if letter == 'P':
-                            block = Player(*pos, image=image)
-                            self.player = block
+                            block = self.player
+                            block.set_position(*pos)
                         if letter in SOLID_BLOCKS:
                             block = Solid_Block(*pos, image=image)
                             block.add(self.solid_blocks)
@@ -109,6 +107,17 @@ class Game:
                                 block.add(self.help)
                             elif letter == 'H':
                                 block = Speed_boost(*pos, image=image)
+                                self.buffs.add(block)
+                            elif letter == 'J':
+                                block = Jump_boost(*pos, image=image)
+                                self.buffs.add(block)
+                            elif letter == 'R':
+                                block = Jump_boost(*pos, image=image)
+                                block.name = 'Jump_down'
+                                self.buffs.add(block)
+                            elif letter == 'L':
+                                block = Speed_boost(*pos, image=image)
+                                block.name = 'Speed_down'
                                 self.buffs.add(block)
                         if letter == 'E':
                             block = Level_end(*pos, image=image)
@@ -127,7 +136,7 @@ class Game:
         pg.display.set_caption(f'Player`s money: {self.player.money} HP: {self.player.hp}')
         if end == 'end':
             self.current_level = (self.current_level + 1) % 2
-            self.start_next_level(self.player.hp, self.player.money)
+            self.start_next_level()
 
     def render(self):
         self.screen.blit(self.background, (0, 0))

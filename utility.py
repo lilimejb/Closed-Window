@@ -65,7 +65,7 @@ class Medicine(Consumable):
 
 
 class Speed_boost(Consumable):
-    def __init__(self, x=None, y=None, boost=5, size=50, speed=10, image=FOOD[0]):
+    def __init__(self, x=None, y=None, boost=2, size=50, speed=10, image=BUFFS[2]):
         if x is None:
             x = random.randint(0, WIN_SIZE[0] - size)
         if y is None:
@@ -76,7 +76,7 @@ class Speed_boost(Consumable):
 
 
 class Jump_boost(Consumable):
-    def __init__(self, x=None, y=None, boost=10, size=50, speed=10, image=FOOD[0]):
+    def __init__(self, x=None, y=None, boost=2, size=50, speed=10, image=BUFFS[3]):
         if x is None:
             x = random.randint(0, WIN_SIZE[0] - size)
         if y is None:
