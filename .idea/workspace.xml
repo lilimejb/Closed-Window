@@ -19,26 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37043318-4c84-473d-b7ac-3851f2a3e807" name="Default Changelist" comment="бафы, дебафы и обработка столкновений с игроком">
-      <change afterPath="$PROJECT_DIR$/enemy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/enemies/bearded/bearded_idle/idle1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/enemies/bearded/bearded_idle/idle2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/enemies/bearded/bearded_idle/idle3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/enemies/bearded/bearded_idle/idle4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/enemies/bearded/bearded_idle/idle5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main_classes.py" afterDir="false" />
+    <list default="true" id="37043318-4c84-473d-b7ac-3851f2a3e807" name="Default Changelist" comment="новый класс Enemy и класс Bearded, который от него,наследуется">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/bearded/bearded-idle/bearded-idle-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/bearded/bearded-idle/bearded-idle-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/bearded/bearded-idle/bearded-idle-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/bearded/bearded-idle/bearded-idle-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/bearded/bearded-idle/bearded-idle-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/enemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/enemy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lvl1" beforeDir="false" afterPath="$PROJECT_DIR$/lvl1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprite.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utility.py" beforeDir="false" afterPath="$PROJECT_DIR$/utility.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608046069087</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="новый класс Enemy и класс Bearded, который от него,наследуется">
+      <created>1608049224402</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1608049224402</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -181,7 +172,8 @@
     <MESSAGE value="новый уровень, ассеты, переключения между уровнями" />
     <MESSAGE value="баг фикс и добавление бафов" />
     <MESSAGE value="бафы, дебафы и обработка столкновений с игроком" />
-    <option name="LAST_COMMIT_MESSAGE" value="бафы, дебафы и обработка столкновений с игроком" />
+    <MESSAGE value="новый класс Enemy и класс Bearded, который от него,наследуется" />
+    <option name="LAST_COMMIT_MESSAGE" value="новый класс Enemy и класс Bearded, который от него,наследуется" />
   </component>
   <component name="WindowStateProjectService">
     <state x="545" y="210" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607937072135">
@@ -196,22 +188,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1607662750627" />
-    <state width="1515" height="204" key="GridCell.Tab.0.bottom" timestamp="1608048630143">
+    <state width="1515" height="204" key="GridCell.Tab.0.bottom" timestamp="1608049873362">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="204" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608048630143" />
-    <state width="1515" height="204" key="GridCell.Tab.0.center" timestamp="1608048630143">
+    <state width="1515" height="204" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608049873362" />
+    <state width="1515" height="204" key="GridCell.Tab.0.center" timestamp="1608049873361">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="204" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608048630143" />
-    <state width="1515" height="204" key="GridCell.Tab.0.left" timestamp="1608048630142">
+    <state width="1515" height="204" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608049873361" />
+    <state width="1515" height="204" key="GridCell.Tab.0.left" timestamp="1608049873361">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="204" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608048630142" />
-    <state width="1515" height="204" key="GridCell.Tab.0.right" timestamp="1608048630143">
+    <state width="1515" height="204" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608049873361" />
+    <state width="1515" height="204" key="GridCell.Tab.0.right" timestamp="1608049873362">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="204" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608048630143" />
+    <state width="1515" height="204" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608049873362" />
     <state width="1515" height="253" key="GridCell.Tab.1.bottom" timestamp="1607948473160">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -228,10 +220,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="253" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1607948473160" />
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1608046079833">
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1608049230372">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608046079833" />
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608049230372" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607608727465">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

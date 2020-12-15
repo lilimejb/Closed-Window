@@ -138,13 +138,13 @@ class Player(Sprite):
         self.__init__()
 
     def take_damage(self, ms, damage):
-        if self.cooldown > 0:
-            self.cooldown -= ms
+        if self.cooldown < self.damage_delay:
+            self.cooldown += ms
             return 0
-        if self.cooldown <= 0:
+        if self.cooldown >= self.damage_delay:
             self.cooldown = 0
-        if self.cooldown == 0:
-            self.cooldown = self.damage_delay
+        if self.cooldown == self.damage_delay or self.cooldown == 0:
+            self.cooldown = 0
             return damage
 
     def take_hp(self, heal):

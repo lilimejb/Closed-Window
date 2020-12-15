@@ -20,29 +20,29 @@ class Enemy(Sprite):
     def move(self):
         if self.way == 'right':
             self.rect.x += self.speed
+            self.image = self.image_true
         elif self.way == 'left':
             self.rect.x -= self.speed
-        if self.rect.x >= self.spawn_point[0] + self.delta:
             self.image = self.image_flipped
+        if self.rect.x >= self.spawn_point[0] + self.delta:
             self.way = 'left'
         elif self.rect.x <= self.spawn_point[0]:
-            self.image = self.image_true
             self.way = 'right'
-
         for block in self.solid_blocks:
             if pg.sprite.collide_rect(self, block):
                 if self.rect.left >= block.rect.right:
                     self.rect.left = block.rect.right
-                    self.way = 'left'
+                    self.way = 'right'
                 else:
                     self.rect.right = block.rect.left
-                    self.way = 'right'
+                    self.way = 'left'
 
 
 class Bearded(Enemy):
-    def __init__(self, x=300, y=300, size=64, speed=2, damage=2, image=ENEMIES['bearded_idle'][0]):
+    def __init__(self, x=300, y=300, size=64, speed=1, damage=4, image=ENEMIES['bearded_idle'][0]):
         super().__init__(x, y, size, speed, damage, image)
         self.name = 'bearded'
+        self.delta = 200
 
 
 class Spike(Solid_Block):
