@@ -1,5 +1,6 @@
 from config import *
 from main_classes import Sprite, Solid_Block
+import pygame as pg
 
 
 class Enemy(Sprite):

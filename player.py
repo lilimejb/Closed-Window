@@ -1,5 +1,6 @@
 from config import *
 from main_classes import Sprite
+import pygame as pg
 
 
 class Player(Sprite):
@@ -12,6 +13,8 @@ class Player(Sprite):
 
     def __init__(self, x=300, y=300, size=64, speed=.2, image=PLAYER_ASSETS['idle'][0]):
         super().__init__(x, y, size, speed, image)
+        self.x_start = x
+        self.y_start = y
         self.money = 0
         self.max_hp = 10
         self.start_hp = self.hp = self.max_hp - 4
@@ -33,8 +36,8 @@ class Player(Sprite):
         self.rect.x, self.rect.y = x, y
 
     def update(self, jump, fall, left, right, ms):
-        self.move(jump, fall, left, right)
         collide = self.collide_check(ms)
+        self.move(jump, fall, left, right)
         if self.hp > self.max_hp:
             self.hp = self.max_hp
         elif self.hp <= 0:
@@ -135,7 +138,14 @@ class Player(Sprite):
                 return 'end'
 
     def respawn(self):
-        self.__init__()
+        self.rect.topleft = (self.x_start, self.y_start)
+        self.money = self.money // 10
+        self.max_hp = 10
+        self.start_hp = self.hp = self.max_hp - 4
+        self.speed_y = 0
+        self.speed_x = 0
+        self.speed_max = 5
+        self.jump_power = self.jump_power_start
 
     def take_damage(self, ms, damage):
         if self.cooldown < self.damage_delay:

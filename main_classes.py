@@ -1,6 +1,6 @@
-import pygame as pg
 from config import *
 import random
+import pygame as pg
 from math import sin, radians
 
 

@@ -1,9 +1,7 @@
-import pygame as pg
 import os
 
 TILE_SIZE = 64
 WIN_SIZE = (16 * TILE_SIZE, 9 * TILE_SIZE)
-BG_COLOR = pg.Color('cyan')
 FPS = 60
 GRAVITY = .5
 
@@ -95,6 +93,7 @@ BLOCK_ASSETS = {'ground': [os.path.join(blocks_sprites, 'ground.png'),
                             os.path.join(blocks_sprites, 'window-bars.png')]}
 
 BACKGROUND = os.path.join(backgrounds, 'background.bmp')
+MENU_BACKGROUND = os.path.join(backgrounds, 'menu_background.bmp')
 
 level_items = os.path.join(images, 'level_items')
 BARREL = os.path.join(level_items, 'barrel.png')

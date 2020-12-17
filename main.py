@@ -1,8 +1,10 @@
 from config import *
 import pygame as pg
+
 from player import Player
 from utility import *
 from enemy import *
+from menu import Menu
 
 clock = pg.time.Clock()
 
@@ -12,6 +14,8 @@ class Game:
         pg.init()
         self.current_level = 0
         self.running = True
+        self.game_running = True
+        self.menu = Menu()
         self.screen = pg.display.set_mode(WIN_SIZE)
         self.background = pg.image.load(BACKGROUND)
         self.background = pg.transform.scale(self.background, WIN_SIZE)
@@ -39,6 +43,12 @@ class Game:
         self.player.buffs = self.buffs
         self.player.solid_blocks = self.solid_blocks
 
+        self.played = None
+
+    def start_menu(self):
+        down = self.menu.run()
+        return down
+
     def load_sprites(self):
         self.objects = pg.sprite.Group()
         self.coins = pg.sprite.Group()
@@ -48,6 +58,9 @@ class Game:
         self.exits = pg.sprite.Group()
         self.buffs = pg.sprite.Group()
         self.load_map()
+        for enemy in self.enemies:
+            if enemy.name in ('bearded'):
+                enemy.solid_blocks = self.solid_blocks
         self.player.help = self.help
         self.player.coins = self.coins
         self.player.enemies = self.enemies
@@ -56,37 +69,13 @@ class Game:
         self.player.solid_blocks = self.solid_blocks
 
     def restart(self):
+        self.player.hp = self.player.start_hp
+        self.player.money = 0
         self.load_sprites()
         self.current_level = 0
 
     def start_next_level(self):
         self.load_sprites()
-
-    def events(self):
-        events = pg.event.get()
-        for event in events:
-            if event.type == pg.QUIT:
-                self.running = False
-            if event.type == pg.KEYDOWN:
-                if event.key == pg.K_d:
-                    self.right = True
-                if event.key == pg.K_a:
-                    self.left = True
-                if event.key == pg.K_SPACE:
-                    self.jump = True
-                if event.key == pg.K_s:
-                    self.fall = True
-                if event.key == pg.K_r:
-                    self.restart()
-            if event.type == pg.KEYUP:
-                if event.key == pg.K_d:
-                    self.right = False
-                if event.key == pg.K_a:
-                    self.left = False
-                if event.key == pg.K_SPACE:
-                    self.jump = False
-                if event.key == pg.K_s:
-                    self.fall = False
 
     def load_map(self):
         map_path = LEVELS[self.current_level]
@@ -134,8 +123,38 @@ class Game:
                             block.add(self.enemies)
                         block.add(self.objects)
 
+    def events(self):
+        events = pg.event.get()
+        for event in events:
+            if event.type == pg.QUIT:
+                self.running = False
+                self.game_running = False
+            if event.type == pg.KEYDOWN:
+                if event.key == pg.K_d:
+                    self.right = True
+                if event.key == pg.K_a:
+                    self.left = True
+                if event.key == pg.K_SPACE:
+                    self.jump = True
+                if event.key == pg.K_s:
+                    self.fall = True
+                if event.key == pg.K_r:
+                    self.restart()
+                if event.key == pg.K_TAB:
+                    self.game_running = False
+            if event.type == pg.KEYUP:
+                if event.key == pg.K_d:
+                    self.right = False
+                if event.key == pg.K_a:
+                    self.left = False
+                if event.key == pg.K_SPACE:
+                    self.jump = False
+                if event.key == pg.K_s:
+                    self.fall = False
+
     def update(self):
         ms = clock.tick(FPS)
+        self.played = ms // 1000
         end = self.player.update(self.jump, self.fall, self.left, self.right, ms)
         self.help.update()
         self.coins.update()
@@ -151,14 +170,25 @@ class Game:
         self.objects.draw(self.screen)
         pg.display.update()
 
-    def run(self):
-        while self.running:
+    def start_game(self):
+        while self.game_running:
             self.events()
             self.update()
             self.render()
 
+    def global_run(self):
+        while self.running:
+            self.menu.running = True
+            down = self.start_menu()
+            self.restart()
+            if down == 'all down':
+                break
+            else:
+                self.game_running = True
+                self.start_game()
+
 
 if __name__ == '__main__':
     game = Game()
-    game.run()
+    game.global_run()
     pg.quit()
