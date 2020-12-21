@@ -1,6 +1,6 @@
+# подключение библиотек
 from config import *
 import pygame as pg
-
 from player import Player
 from utility import *
 from enemy import *
@@ -9,21 +9,26 @@ from menu import Menu
 clock = pg.time.Clock()
 
 
+# Главный класс игры
 class Game:
     def __init__(self):
         pg.init()
-        self.current_level = 0
+
         self.running = True
         self.game_running = True
+
         self.menu = Menu()
+        self.player = Player()
+
         self.screen = pg.display.set_mode(WIN_SIZE)
         self.background = pg.image.load(BACKGROUND)
         self.background = pg.transform.scale(self.background, WIN_SIZE)
+
         self.right = False
         self.left = False
         self.jump = False
         self.fall = False
-        self.player = Player()
+
         self.objects = pg.sprite.Group()
         self.coins = pg.sprite.Group()
         self.enemies = pg.sprite.Group()
@@ -31,11 +36,15 @@ class Game:
         self.help = pg.sprite.Group()
         self.exits = pg.sprite.Group()
         self.buffs = pg.sprite.Group()
+
         self.current_level = 0
         self.load_map()
+
         for enemy in self.enemies:
             if enemy.name in ('bearded'):
                 enemy.solid_blocks = self.solid_blocks
+
+        # TODO сделать список групп
         self.player.help = self.help
         self.player.coins = self.coins
         self.player.enemies = self.enemies
@@ -45,10 +54,13 @@ class Game:
 
         self.played = None
 
+    # функция для запуска меню
     def start_menu(self):
         down = self.menu.run()
         return down
 
+    # функция создающая группы спрайтов и экзэмпляры классов
+    # TODO сделать код чище и переписать логику появления игрока
     def load_sprites(self):
         self.objects = pg.sprite.Group()
         self.coins = pg.sprite.Group()
@@ -68,12 +80,14 @@ class Game:
         self.player.buffs = self.buffs
         self.player.solid_blocks = self.solid_blocks
 
+    # функция перезапуска игры
     def restart(self):
         self.player.hp = self.player.start_hp
         self.player.money = 0
         self.load_sprites()
         self.current_level = 0
 
+    # функция загрузки следующего уровня
     def start_next_level(self):
         self.load_sprites()
 
@@ -82,15 +96,20 @@ class Game:
         with open(map_path, 'r', encoding='UTF-8') as file:
             for y, line in enumerate(file):
                 for x, letter in enumerate(line):
+                    # TODO сделать как сказал Лёша
                     if letter in MAP_BLOCKS.keys():
                         pos = (x * TILE_SIZE, y * TILE_SIZE)
                         image = MAP_BLOCKS[letter]
+                        # установка стартовых координат игрока
                         if letter == 'P':
                             block = self.player
                             block.set_position(*pos)
+                        # установка координат для всех "твердых" объектов
+                        # TODO перенести класс Spike в Solid_block
                         if letter in SOLID_BLOCKS:
                             block = Solid_Block(*pos, image=image)
                             block.add(self.solid_blocks)
+                        # установка координат для всех подбираемых предметов
                         if letter in CONSUMABLES:
                             if letter == 'C':
                                 block = Coin(*pos, image=image)
@@ -112,17 +131,23 @@ class Game:
                                 block = Speed_boost(*pos, image=image)
                                 block.name = 'Speed_down'
                                 self.buffs.add(block)
+                        # установка координат выхода
+                        # TODO перенести выход в Solid_blocks
                         if letter == 'E':
                             block = Level_end(*pos, image=image)
                             block.add(self.exits)
-                        if letter == 'S':
-                            block = Spike(*pos, image=image)
-                            block.add(self.enemies)
+                        # установка координат противников
+                        # TODO перенести противников в Solid_blocks
                         if letter == 'V':
                             block = Bearded(*pos, image=image)
                             block.add(self.enemies)
+                        if letter == 'S':
+                            block = Spike(*pos, image=image)
+                            block.add(self.enemies)
                         block.add(self.objects)
 
+    # обработка всех событий
+    # TODO очистить ненужное
     def events(self):
         events = pg.event.get()
         for event in events:
@@ -153,14 +178,18 @@ class Game:
                     self.fall = False
 
     def update(self):
+        # установка FPS
         ms = clock.tick(FPS)
+
         self.played = ms // 1000
         end = self.player.update(self.jump, self.fall, self.left, self.right, ms)
         self.help.update()
         self.coins.update()
         self.buffs.update()
         self.enemies.update()
-        pg.display.set_caption(f'Player`s money: {self.player.money} HP: {self.player.hp}')
+        pg.display.set_caption(f'Player`s money: {self.player.money} HP: {self.player.hp} Played: {self.played}')
+
+        # старт нового уровня
         if end == 'end':
             self.current_level = (self.current_level + 1) % 2
             self.start_next_level()
@@ -170,12 +199,14 @@ class Game:
         self.objects.draw(self.screen)
         pg.display.update()
 
-    def start_game(self):
+    # фунция запуска игры
+    def game_run(self):
         while self.game_running:
             self.events()
             self.update()
             self.render()
 
+    # фунция запуска приложения
     def global_run(self):
         while self.running:
             self.menu.running = True
@@ -185,7 +216,7 @@ class Game:
                 break
             else:
                 self.game_running = True
-                self.start_game()
+                self.game_run()
 
 
 if __name__ == '__main__':

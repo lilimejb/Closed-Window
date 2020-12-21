@@ -2,6 +2,8 @@ import pygame as pg
 from config import *
 
 
+# Класс, отвечающий за всё что связанно с начальным экраном
+# TODO сделать не криво
 class Menu:
     def __init__(self):
         pg.init()
@@ -11,6 +13,7 @@ class Menu:
         self.background = pg.image.load(MENU_BACKGROUND)
         self.background = pg.transform.scale(self.background, WIN_SIZE)
 
+    # обработка всех событий
     def events(self):
         events = pg.event.get()
         for event in events:
@@ -34,6 +37,7 @@ class Menu:
         self.render_text()
         pg.display.update()
 
+    # функция запуска меню
     def run(self):
         while self.running:
             down = self.events()

@@ -1,16 +1,25 @@
 import os
 
+# константы
 TILE_SIZE = 64
 WIN_SIZE = (16 * TILE_SIZE, 9 * TILE_SIZE)
 FPS = 60
 GRAVITY = .5
 
-# PICS
+# путь к основным папкам
 current_dir = os.path.dirname(__file__)
 images = os.path.join(current_dir, 'images')
 hero_sprites = os.path.join(images, 'hero_sprites')
 blocks_sprites = os.path.join(images, 'blocks_sprites')
 backgrounds = os.path.join(images, 'backgrounds')
+level_items = os.path.join(images, 'level_items')
+consumable = os.path.join(images, 'consumable')
+heal = os.path.join(consumable, 'heal')
+buffs = os.path.join(consumable, 'buffs')
+coins = os.path.join(consumable, 'coins')
+enemies = os.path.join(images, 'enemies')
+
+# путь к папкам с картинками игрока
 idle = os.path.join(hero_sprites, 'Idle')
 attack = os.path.join(hero_sprites, 'Attack')
 death = os.path.join(hero_sprites, 'Death')
@@ -19,6 +28,8 @@ run = os.path.join(hero_sprites, 'Run')
 take_hit = os.path.join(hero_sprites, 'Take_hit')
 fall = os.path.join(hero_sprites, 'Fall')
 
+# ассеты для игрока
+# TODO сделать списочным выражением
 PLAYER_ASSETS = {'idle': [os.path.join(idle, 'idle1.png'),
                           os.path.join(idle, 'idle2.png'),
                           os.path.join(idle, 'idle3.png'),
@@ -56,6 +67,8 @@ PLAYER_ASSETS = {'idle': [os.path.join(idle, 'idle1.png'),
                  'fall': [os.path.join(fall, 'fall1.png'),
                           os.path.join(fall, 'fall2.png')]}
 
+# ассеты для блоков
+# TODO сделать списочным выражением
 BLOCK_ASSETS = {'ground': [os.path.join(blocks_sprites, 'ground.png'),
                            os.path.join(blocks_sprites, 'ground-b.png'),
                            os.path.join(blocks_sprites, 'ground-corner.png'),
@@ -92,10 +105,12 @@ BLOCK_ASSETS = {'ground': [os.path.join(blocks_sprites, 'ground.png'),
                 'windows': [os.path.join(blocks_sprites, 'window.png'),
                             os.path.join(blocks_sprites, 'window-bars.png')]}
 
+# ассеты для задних фонов
 BACKGROUND = os.path.join(backgrounds, 'background.bmp')
 MENU_BACKGROUND = os.path.join(backgrounds, 'menu_background.bmp')
 
-level_items = os.path.join(images, 'level_items')
+# ассеты для предметов на уровне
+# TODO сделать списочным выражением
 BARREL = os.path.join(level_items, 'barrel.png')
 CRATE = os.path.join(level_items, 'crate.png')
 CRATE_STACK = os.path.join(level_items, 'crate_stack.png')
@@ -107,8 +122,8 @@ STREET_LAMP = os.path.join(level_items, 'street_lamp.png')
 WAGON = os.path.join(level_items, 'wagon.png')
 WELL = os.path.join(level_items, 'well.png')
 
-consumable = os.path.join(images, 'consumable')
-heal = os.path.join(consumable, 'heal')
+# ассеты для еды
+# TODO сделать списочным выражением
 FOOD = [os.path.join(heal, 'Apple.png'),
         os.path.join(heal, 'AppleWorm.png'),
         os.path.join(heal, 'Avocado.png'),
@@ -174,26 +189,30 @@ FOOD = [os.path.join(heal, 'Apple.png'),
         os.path.join(heal, 'Whiskey.png'),
         os.path.join(heal, 'Wine.png')]
 
-coins = os.path.join(consumable, 'coins')
+# ассеты для монет
+# TODO сделать списочным выражением
 COINS = [os.path.join(coins, 'Coin_Blue.png'),
          os.path.join(coins, 'Coin_Gold.png'),
          os.path.join(coins, 'Coin_Green.png'),
          os.path.join(coins, 'Coin_Purple.png'),
          os.path.join(coins, 'Coin_Red.png')]
 
-buffs = os.path.join(consumable, 'buffs')
+# ассеты для полезных/отрицательных эффектов
+# TODO сделать списочным выражением
 BUFFS = [os.path.join(buffs, 'Damage_boost.png'),
          os.path.join(buffs, 'Speed_down.png'),
          os.path.join(buffs, 'Speed_boost.png'),
          os.path.join(buffs, 'Jump_boost.png'),
          os.path.join(buffs, 'Jump_down.png')]
 
-# ВРАГИ
-
-enemies = os.path.join(images, 'enemies')
+# путь к папкам с врагами
 bearded = os.path.join(enemies, 'bearded')
+
+# путь к папкам с картинками игрока
 bearded_idle = os.path.join(bearded, 'bearded_idle')
 
+# ассеты для врагов
+# TODO сделать списочным выражением
 ENEMIES = {'spike': os.path.join(enemies, 'spike.png'),
            'bearded_idle': [os.path.join(bearded_idle, 'idle1.png'),
                             os.path.join(bearded_idle, 'idle2.png'),
@@ -201,9 +220,11 @@ ENEMIES = {'spike': os.path.join(enemies, 'spike.png'),
                             os.path.join(bearded_idle, 'idle4.png'),
                             os.path.join(bearded_idle, 'idle5.png')]}
 
-
+# уровни
+# TODO сделать списочным выражением
 LEVELS = ['lvl1', 'lvl2']
 
+# блоки на карте
 MAP_BLOCKS = {'B': BLOCK_ASSETS['ground'][0],
               'C': COINS[0],
               'S': ENEMIES['spike'],

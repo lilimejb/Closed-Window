@@ -4,9 +4,10 @@ import pygame as pg
 from math import sin, radians
 
 
+# Главный класс для всех объектов в игре
 class Sprite(pg.sprite.Sprite):
     def __init__(self, x=0, y=0, size=100, speed=10, image=PLAYER_ASSETS['idle'][0]):
-        pg.sprite.Sprite.__init__(self)
+        super().__init__()
         self.name = 'basic_sprite'
         self.size = size
         self.speed = speed
@@ -24,11 +25,13 @@ class Sprite(pg.sprite.Sprite):
         pass
 
 
+# Главный класс для всех твёрдых блоков в игре
 class Solid_Block(Sprite):
-    def __init__(self, x=None, y=None, size=64, speed=10, image=BLOCK_ASSETS['ground'][0]):
+    def __init__(self, x=0, y=0, size=64, speed=10, image=BLOCK_ASSETS['ground'][0]):
         super().__init__(x, y, size, speed, image)
 
 
+# Главный класс для всех подбираемых предметов в игре
 class Consumable(Sprite):
     def __init__(self, x=None, y=None, size=100, speed=10, image=BLOCK_ASSETS['ground'][0]):
         super().__init__(x, y, size, speed, image)
