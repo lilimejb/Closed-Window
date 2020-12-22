@@ -5,6 +5,7 @@ from player import Player
 from utility import *
 from enemy import *
 from menu import Menu
+from main_classes import Camera
 
 clock = pg.time.Clock()
 
@@ -19,6 +20,7 @@ class Game:
 
         self.menu = Menu()
         self.player = Player()
+        self.camera = Camera()
 
         self.screen = pg.display.set_mode(WIN_SIZE)
         self.background = pg.image.load(BACKGROUND)
@@ -180,6 +182,11 @@ class Game:
     def update(self):
         # установка FPS
         ms = clock.tick(FPS)
+        # изменяем ракурс камеры
+        self.camera.update(self.player)
+        # обновляем положение всех спрайтов
+        for obj in self.objects:
+            self.camera.apply(obj)
 
         self.played = ms // 1000
         end = self.player.update(self.jump, self.fall, self.left, self.right, ms)
@@ -191,7 +198,7 @@ class Game:
 
         # старт нового уровня
         if end == 'end':
-            self.current_level = (self.current_level + 1) % 2
+            self.current_level = self.current_level + 1
             self.start_next_level()
 
     def render(self):

@@ -18,6 +18,7 @@ heal = os.path.join(consumable, 'heal')
 buffs = os.path.join(consumable, 'buffs')
 coins = os.path.join(consumable, 'coins')
 enemies = os.path.join(images, 'enemies')
+levels = os.path.join('levels')
 
 # путь к папкам с картинками игрока
 idle = os.path.join(hero_sprites, 'Idle')
@@ -222,7 +223,7 @@ ENEMIES = {'spike': os.path.join(enemies, 'spike.png'),
 
 # уровни
 # TODO сделать списочным выражением
-LEVELS = ['lvl1', 'lvl2']
+LEVELS = [os.path.join(levels, f'lvl{n + 1}') for n in range(len([f for f in os.listdir(levels)]))]
 
 # блоки на карте
 MAP_BLOCKS = {'B': BLOCK_ASSETS['ground'][0],
