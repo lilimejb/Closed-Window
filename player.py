@@ -20,7 +20,7 @@ class Player(Sprite):
         self.max_hp = 10
         self.start_hp = self.hp = self.max_hp - 4
         self.image_true = self.image
-        self.damaged_image = PLAYER_ASSETS['take_hit'][1]
+        # self.damaged_image = PLAYER_ASSETS['take_hit'][1]
         self.image_flipped = pg.transform.flip(self.image, True, False)
         self.speed_y = 0
         self.speed_x = 0
@@ -55,12 +55,10 @@ class Player(Sprite):
                 self.speed_x = 0
         elif left:
             self.speed_x -= self.speed
-            self.image = self.image_flipped
             if abs(self.speed_x) > self.speed_max:
                 self.speed_x = -self.speed_max
         elif right:
             self.speed_x += self.speed
-            self.image = self.image_true
             if abs(self.speed_x) > self.speed_max:
                 self.speed_x = self.speed_max
 

@@ -6,7 +6,6 @@ from config import *
 # TODO сделать не криво
 class Menu:
     def __init__(self):
-        pg.init()
         self.font = pg.font.SysFont(None, 64)
         self.running = True
         self.screen = pg.display.set_mode(WIN_SIZE)

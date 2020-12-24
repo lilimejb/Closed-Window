@@ -1,7 +1,6 @@
 from config import *
 import random
 import pygame as pg
-from math import sin, radians
 
 
 # Главный класс для всех объектов в игре
@@ -65,3 +64,41 @@ class Camera:
     def update(self, target):
         self.dx = -(target.rect.x + target.rect.w // 2 - WIN_SIZE[0] // 2)
         self.dy = -(target.rect.y + target.rect.h // 2 - WIN_SIZE[1] // 2)
+
+
+class Animator:
+    def __init__(self):
+        self.frames = -1
+        self.is_flipped = False
+
+    def make_animation(self, sprite, pictures, flipped_pictures):
+        if sprite.speed_x == 0 and sprite.speed_y == 0:
+            self.frames += 1
+            if self.is_flipped:
+                return flipped_pictures['idle'][self.frames % len(pictures['idle'])]
+            else:
+                return pictures['idle'][self.frames % len(pictures['idle'])]
+
+        elif sprite.speed_y < 0:
+            self.frames += 1
+            if self.is_flipped:
+                return flipped_pictures['jump'][self.frames % len(pictures['jump'])]
+            else:
+                return pictures['jump'][self.frames % len(pictures['jump'])]
+
+        elif sprite.speed_y > 0:
+            self.frames += 1
+            if self.is_flipped:
+                return flipped_pictures['fall'][self.frames % len(pictures['fall'])]
+            else:
+                return pictures['fall'][self.frames % len(pictures['fall'])]
+
+        elif sprite.speed_x > 0:
+            self.frames += 1
+            self.is_flipped = False
+            return pictures['run'][self.frames % len(pictures['run'])]
+
+        elif sprite.speed_x < 0:
+            self.frames += 1
+            self.is_flipped = True
+            return flipped_pictures['run'][self.frames % len(pictures['run'])]
