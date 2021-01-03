@@ -28,7 +28,6 @@ class Game:
         self.left = False
         self.jump = False
         self.fall = False
-        self.is_flipped = False
 
         self.objects = pg.sprite.Group()
         self.coins = pg.sprite.Group()
@@ -40,6 +39,8 @@ class Game:
 
         self.current_level = 0
         self.load_map()
+
+        self.camera_usage = True
 
         for enemy in self.enemies:
             if enemy.name == 'bearded':
@@ -93,7 +94,13 @@ class Game:
         self.load_sprites()
 
     def load_map(self):
-        map_path = LEVELS[self.current_level]
+        if random.randint(1, 2) == 1:
+            map_path = BIG_LEVELS[self.current_level]
+            self.camera_usage = True
+        else:
+            map_path = LEVELS[self.current_level]
+            self.camera_usage = False
+
         with open(map_path, 'r', encoding='UTF-8') as file:
             for y, line in enumerate(file):
                 for x, letter in enumerate(line):
@@ -182,11 +189,12 @@ class Game:
         # установка FPS
         ms = clock.tick(FPS)
 
-        # # изменяем ракурс камеры
-        # self.camera.update(self.player)
-        # # обновляем положение всех спрайтов
-        # for obj in self.objects:
-        #     self.camera.apply(obj)
+        if self.camera_usage:
+            # изменяем ракурс камеры
+            self.camera.update(self.player)
+            # обновляем положение всех спрайтов
+            for obj in self.objects:
+                self.camera.apply(obj)
 
         end = self.player.update(self.jump, self.fall, self.left, self.right, ms)
         self.help.update()
@@ -197,7 +205,7 @@ class Game:
 
         # старт нового уровня
         if end == 'end':
-            self.current_level = self.current_level + 1
+            self.current_level = (self.current_level + 1) % 5
             self.start_next_level()
 
     def render(self):

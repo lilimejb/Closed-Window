@@ -19,6 +19,7 @@ buffs = os.path.join(consumable, 'buffs')
 coins = os.path.join(consumable, 'coins')
 enemies = os.path.join(images, 'enemies')
 levels = os.path.join('levels')
+big_levels = os.path.join('big_levels')
 
 # путь к папкам с картинками игрока
 idle = os.path.join(hero_sprites, 'Idle')
@@ -214,7 +215,6 @@ bearded_idle = os.path.join(bearded, 'bearded_idle')
 bearded_walk = os.path.join(bearded, 'bearded_walk')
 
 # ассеты для врагов
-# TODO сделать списочным выражением
 ENEMIES = {'spike': os.path.join(enemies, 'spike.png'),
            'bearded': {'idle': [os.path.join(bearded_idle, f'idle{n + 1}.png') for n in
                                 range(len([f for f in os.listdir(bearded_idle)]))],
@@ -222,8 +222,8 @@ ENEMIES = {'spike': os.path.join(enemies, 'spike.png'),
                                range(len([f for f in os.listdir(bearded_idle)]))]}}
 
 # уровни
-# TODO сделать списочным выражением
 LEVELS = [os.path.join(levels, f'lvl{n + 1}') for n in range(len([f for f in os.listdir(levels)]))]
+BIG_LEVELS = [os.path.join(big_levels, f'lvl{n + 1}') for n in range(len([f for f in os.listdir(big_levels)]))]
 
 # блоки на карте
 MAP_BLOCKS = {'B': BLOCK_ASSETS['ground'][0],
