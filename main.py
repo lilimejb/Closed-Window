@@ -3,7 +3,7 @@ from player import Player
 from utility import *
 from enemy import *
 from menu import Menu
-from main_classes import Camera, Animator
+from main_classes import Camera
 
 clock = pg.time.Clock()
 
@@ -19,7 +19,6 @@ class Game:
         self.menu = Menu()
         self.player = Player()
         self.camera = Camera()
-        self.animator = Animator()
 
         self.screen = pg.display.set_mode(WIN_SIZE)
         self.background = pg.image.load(BACKGROUND)
@@ -45,18 +44,6 @@ class Game:
         for enemy in self.enemies:
             if enemy.name == 'bearded':
                 enemy.solid_blocks = self.solid_blocks
-
-        self.pictures = {}
-        self.flipped_pictures = {}
-        self.animator_counters = 0
-        self.frames = 0
-
-        for key in PLAYER_ASSETS.keys():
-            self.pictures[key] = [pg.transform.scale(pg.image.load(i), (self.player.size, self.player.size)) for i in
-                                  PLAYER_ASSETS[key]]
-
-        for key in self.pictures:
-            self.flipped_pictures[key] = [pg.transform.flip(i, True, False) for i in self.pictures[key]]
 
         # TODO сделать список групп
         self.player.help = self.help
@@ -195,51 +182,11 @@ class Game:
         # установка FPS
         ms = clock.tick(FPS)
 
-        # изменяем ракурс камеры
-        self.camera.update(self.player)
-        # обновляем положение всех спрайтов
-        for obj in self.objects:
-            self.camera.apply(obj)
-
-        self.animator_counters += 1
-        if self.animator_counters == 5:
-            if self.player.speed_x > 0:
-                self.is_flipped = False
-            if self.player.speed_x < 0:
-                self.is_flipped = True
-            if self.player.speed_x == 0 and self.player.speed_y == 0:
-                if self.is_flipped:
-                    self.player.image = self.flipped_pictures['idle'][self.frames % len(self.pictures['idle'])]
-                else:
-                    self.player.image = self.pictures['idle'][self.frames % len(self.pictures['idle'])]
-                self.frames += 1
-                self.animator_counters = 0
-
-            elif self.player.speed_y < 0:
-                if self.is_flipped:
-                    self.player.image = self.flipped_pictures['jump'][self.frames % len(self.pictures['jump'])]
-                else:
-                    self.player.image = self.pictures['jump'][self.frames % len(self.pictures['jump'])]
-                self.frames += 1
-                self.animator_counters = 0
-
-            elif self.player.speed_y > 0:
-                if self.is_flipped:
-                    self.player.image = self.flipped_pictures['fall'][self.frames % len(self.pictures['fall'])]
-                else:
-                    self.player.image = self.pictures['fall'][self.frames % len(self.pictures['fall'])]
-                self.frames += 1
-                self.animator_counters = 0
-
-            elif self.player.speed_x > 0:
-                self.player.image = self.pictures['run'][self.frames % len(self.pictures['run'])]
-                self.frames += 1
-                self.animator_counters = 0
-
-            elif self.player.speed_x < 0:
-                self.player.image = self.flipped_pictures['run'][self.frames % len(self.pictures['run'])]
-                self.frames += 1
-                self.animator_counters = 0
+        # # изменяем ракурс камеры
+        # self.camera.update(self.player)
+        # # обновляем положение всех спрайтов
+        # for obj in self.objects:
+        #     self.camera.apply(obj)
 
         end = self.player.update(self.jump, self.fall, self.left, self.right, ms)
         self.help.update()

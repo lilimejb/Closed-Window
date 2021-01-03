@@ -211,15 +211,15 @@ bearded = os.path.join(enemies, 'bearded')
 
 # путь к папкам с картинками игрока
 bearded_idle = os.path.join(bearded, 'bearded_idle')
+bearded_walk = os.path.join(bearded, 'bearded_walk')
 
 # ассеты для врагов
 # TODO сделать списочным выражением
 ENEMIES = {'spike': os.path.join(enemies, 'spike.png'),
-           'bearded_idle': [os.path.join(bearded_idle, 'idle1.png'),
-                            os.path.join(bearded_idle, 'idle2.png'),
-                            os.path.join(bearded_idle, 'idle3.png'),
-                            os.path.join(bearded_idle, 'idle4.png'),
-                            os.path.join(bearded_idle, 'idle5.png')]}
+           'bearded': {'idle': [os.path.join(bearded_idle, f'idle{n + 1}.png') for n in
+                                range(len([f for f in os.listdir(bearded_idle)]))],
+                       'run': [os.path.join(bearded_walk, f'walk{n + 1}.png') for n in
+                               range(len([f for f in os.listdir(bearded_idle)]))]}}
 
 # уровни
 # TODO сделать списочным выражением
@@ -236,7 +236,7 @@ MAP_BLOCKS = {'B': BLOCK_ASSETS['ground'][0],
               'H': BUFFS[2],
               'J': BUFFS[3],
               'R': BUFFS[4],
-              'V': ENEMIES['bearded_idle'][0]}
+              'V': ENEMIES['bearded']}
 
 SOLID_BLOCKS = 'B'
 CONSUMABLES = 'FCHJLR'

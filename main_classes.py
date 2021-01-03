@@ -1,6 +1,8 @@
-from config import *
 import random
+
 import pygame as pg
+
+from config import *
 
 
 # Главный класс для всех объектов в игре
@@ -66,39 +68,65 @@ class Camera:
         self.dy = -(target.rect.y + target.rect.h // 2 - WIN_SIZE[1] // 2)
 
 
-class Animator:
-    def __init__(self):
-        self.frames = -1
+class Animated_Sprite(Sprite):
+    def __init__(self, x=0, y=0, size=100, speed=10, image_dictionary=PLAYER_ASSETS):
+        super().__init__(x, y, size, speed, image_dictionary['idle'][0])
+        self.size = size
+        self.speed = speed
+        self.x = x
+        self.y = y
+        self.speed_x = 0
+        self.speed_y = 0
+        self.images = {}
+        self.flipped_images = {}
+        self.animator_counters = 0
+        self.frames = 0
         self.is_flipped = False
 
-    def make_animation(self, sprite, pictures, flipped_pictures):
-        if sprite.speed_x == 0 and sprite.speed_y == 0:
-            self.frames += 1
-            if self.is_flipped:
-                return flipped_pictures['idle'][self.frames % len(pictures['idle'])]
-            else:
-                return pictures['idle'][self.frames % len(pictures['idle'])]
+        for key in image_dictionary.keys():
+            self.images[key] = [pg.transform.scale(pg.image.load(i), (size, size)) for i in
+                                image_dictionary[key]]
 
-        elif sprite.speed_y < 0:
-            self.frames += 1
-            if self.is_flipped:
-                return flipped_pictures['jump'][self.frames % len(pictures['jump'])]
-            else:
-                return pictures['jump'][self.frames % len(pictures['jump'])]
+        for key in self.images:
+            self.flipped_images[key] = [pg.transform.flip(i, True, False) for i in self.images[key]]
 
-        elif sprite.speed_y > 0:
-            self.frames += 1
-            if self.is_flipped:
-                return flipped_pictures['fall'][self.frames % len(pictures['fall'])]
-            else:
-                return pictures['fall'][self.frames % len(pictures['fall'])]
+    def make_animation(self):
+        self.animator_counters += 1
+        if self.animator_counters == 5:
+            if self.speed_x > 0:
+                self.is_flipped = False
+            if self.speed_x < 0:
+                self.is_flipped = True
+            if self.speed_x == 0 and self.speed_y == 0:
+                if self.is_flipped:
+                    self.image = self.flipped_images['idle'][self.frames % len(self.images['idle'])]
+                else:
+                    self.image = self.images['idle'][self.frames % len(self.images['idle'])]
+                self.frames += 1
+                self.animator_counters = 0
 
-        elif sprite.speed_x > 0:
-            self.frames += 1
-            self.is_flipped = False
-            return pictures['run'][self.frames % len(pictures['run'])]
+            elif self.speed_y < 0:
+                if self.is_flipped:
+                    self.image = self.flipped_images['jump'][self.frames % len(self.images['jump'])]
+                else:
+                    self.image = self.images['jump'][self.frames % len(self.images['jump'])]
+                self.frames += 1
+                self.animator_counters = 0
 
-        elif sprite.speed_x < 0:
-            self.frames += 1
-            self.is_flipped = True
-            return flipped_pictures['run'][self.frames % len(pictures['run'])]
+            elif self.speed_y > 0:
+                if self.is_flipped:
+                    self.image = self.flipped_images['fall'][self.frames % len(self.images['fall'])]
+                else:
+                    self.image = self.images['fall'][self.frames % len(self.images['fall'])]
+                self.frames += 1
+                self.animator_counters = 0
+
+            elif self.speed_x > 0:
+                self.image = self.images['run'][self.frames % len(self.images['run'])]
+                self.frames += 1
+                self.animator_counters = 0
+
+            elif self.speed_x < 0:
+                self.image = self.flipped_images['run'][self.frames % len(self.images['run'])]
+                self.frames += 1
+                self.animator_counters = 0

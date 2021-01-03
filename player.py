@@ -1,10 +1,10 @@
 from config import *
-from main_classes import Sprite
+from main_classes import Animated_Sprite
 import pygame as pg
 
 
 # Класс, отвечающий за всё что связано с игроком
-class Player(Sprite):
+class Player(Animated_Sprite):
     coins = None
     enemies = None
     help = None
@@ -12,8 +12,8 @@ class Player(Sprite):
     exits = None
     buffs = None
 
-    def __init__(self, x=300, y=300, size=64, speed=.2, image=PLAYER_ASSETS['idle'][0]):
-        super().__init__(x, y, size, speed, image)
+    def __init__(self, x=300, y=300, size=64, speed=.2, images=PLAYER_ASSETS):
+        super().__init__(x, y, size, speed, images)
         self.x_start = x
         self.y_start = y
         self.money = 0
@@ -40,6 +40,7 @@ class Player(Sprite):
     def update(self, jump, fall, left, right, ms):
         collide = self.collide_check(ms)
         self.move(jump, fall, left, right)
+        self.make_animation()
         if self.hp > self.max_hp:
             self.hp = self.max_hp
         elif self.hp <= 0:
