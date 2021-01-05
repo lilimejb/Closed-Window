@@ -19,12 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37043318-4c84-473d-b7ac-3851f2a3e807" name="Default Changelist" comment="переделана камера">
-      <change afterPath="$PROJECT_DIR$/battle_theme.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/calm_theme.mp3" afterDir="false" />
+    <list default="true" id="37043318-4c84-473d-b7ac-3851f2a3e807" name="Default Changelist" comment="добавлена музыка, которая меняется после &quot;зачистки&quot; локации">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/enemy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_classes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -232,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609654664049</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="добавлена музыка, которая меняется после &quot;зачистки&quot; локации">
+      <created>1609833401898</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1609833401898</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -261,17 +267,7 @@
     <MESSAGE value="добавлено меню" />
     <MESSAGE value="добавлена камера и новые уровней" />
     <MESSAGE value="переделана камера" />
-    <option name="LAST_COMMIT_MESSAGE" value="переделана камера" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/enemy.py</url>
-          <line>54</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="добавлена музыка, которая меняется после &quot;зачистки&quot; локации" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлена музыка, которая меняется после &quot;зачистки&quot; локации" />
   </component>
 </project>

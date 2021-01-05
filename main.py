@@ -34,6 +34,7 @@ class Game:
         self.left = False
         self.jump = False
         self.fall = False
+        self.is_attacking = False
 
         self.objects = pg.sprite.Group()
         self.coins = pg.sprite.Group()
@@ -182,6 +183,8 @@ class Game:
                     self.jump = True
                 if event.key == pg.K_s:
                     self.fall = True
+                if event.key == pg.K_q:
+                    self.is_attacking = True
                 if event.key == pg.K_r:
                     self.restart()
                 if event.key == pg.K_TAB:
@@ -195,6 +198,8 @@ class Game:
                     self.jump = False
                 if event.key == pg.K_s:
                     self.fall = False
+                if event.key == pg.K_q:
+                    self.is_attacking = False
 
     def update(self):
         # установка FPS
@@ -207,7 +212,7 @@ class Game:
             for obj in self.objects:
                 self.camera.apply(obj)
 
-        end = self.player.update(self.jump, self.fall, self.left, self.right, ms)
+        end = self.player.update(self.jump, self.fall, self.left, self.right, self.is_attacking, ms)
         self.help.update()
         self.coins.update()
         self.buffs.update()

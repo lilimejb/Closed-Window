@@ -55,7 +55,7 @@ class Bearded(Enemy):
         self.name = 'bearded'
         self.delta = 200
 
-    def make_animation(self):
+    def make_animation(self, **kwargs):
         self.animator_counters += 1
         if self.animator_counters == 5:
             if self.speed_x > 0:

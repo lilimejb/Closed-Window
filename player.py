@@ -37,10 +37,10 @@ class Player(Animated_Sprite):
         self.rect.x, self.rect.y = x, y
         self.x_start, self.y_start = x, y
 
-    def update(self, jump, fall, left, right, ms):
-        collide = self.collide_check(ms)
+    def update(self, jump, fall, left, right, is_attacking, ms):
+        collide = self.collide_check(is_attacking, ms)
         self.move(jump, fall, left, right)
-        self.make_animation()
+        self.make_animation(is_attacking)
         if self.hp > self.max_hp:
             self.hp = self.max_hp
         elif self.hp <= 0:
@@ -108,7 +108,7 @@ class Player(Animated_Sprite):
             self.speed_y = 0
         self.on_the_ground = is_collide
 
-    def collide_check(self, ms):
+    def collide_check(self, is_attacking, ms):
         # сбор монет
         for coin in self.coins:
             if pg.sprite.collide_rect(self, coin):
@@ -119,7 +119,8 @@ class Player(Animated_Sprite):
         for enemy in self.enemies:
             if pg.sprite.collide_rect(self, enemy):
                 self.hp -= self.take_damage(ms, enemy.damage)
-                enemy.kill()
+                if is_attacking:
+                    enemy.kill()
 
         # сбор еды
         for food in self.help:
