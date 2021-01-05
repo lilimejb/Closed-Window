@@ -30,6 +30,10 @@ run = os.path.join(hero_sprites, 'Run')
 take_hit = os.path.join(hero_sprites, 'Take_hit')
 fall = os.path.join(hero_sprites, 'Fall')
 
+# ассеты музыки
+BATTLE_THEME = os.path.join('battle_theme.mp3')
+CALM_THEME = os.path.join('calm_theme.mp3')
+
 # ассеты для игрока
 # TODO сделать списочным выражением
 PLAYER_ASSETS = {'idle': [os.path.join(idle, 'idle1.png'),

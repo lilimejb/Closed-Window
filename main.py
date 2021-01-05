@@ -8,6 +8,12 @@ from main_classes import Camera
 clock = pg.time.Clock()
 
 
+def play_music(music):
+    pg.mixer.init()
+    pg.mixer.music.load(music)
+    pg.mixer.music.play(-1)
+
+
 # Главный класс игры
 class Game:
     def __init__(self):
@@ -54,7 +60,9 @@ class Game:
         self.player.buffs = self.buffs
         self.player.solid_blocks = self.solid_blocks
 
-        self.played = None
+        self.music = BATTLE_THEME
+        self.is_playing = True
+        self.has_changed = False
 
     # функция для запуска меню
     def start_menu(self):
@@ -81,6 +89,10 @@ class Game:
         self.player.exits = self.exits
         self.player.buffs = self.buffs
         self.player.solid_blocks = self.solid_blocks
+        self.has_changed = False
+        if self.enemies:
+            self.music = BATTLE_THEME
+        play_music(self.music)
 
     # функция перезапуска игры
     def restart(self):
@@ -151,7 +163,6 @@ class Game:
                             block.add(self.enemies)
                         if letter == 'S':
                             block = Spike(*pos, image=image)
-                            block.add(self.enemies)
                         block.add(self.objects)
 
     # обработка всех событий
@@ -203,6 +214,15 @@ class Game:
         self.enemies.update()
         pg.display.set_caption(f'Player`s money: {self.player.money} HP: {self.player.hp}')
 
+        if not self.enemies:
+            self.music = CALM_THEME
+            self.is_playing = False
+
+        if self.music == CALM_THEME and not self.is_playing and not self.has_changed:
+            play_music(self.music)
+            self.is_playing = True
+            self.has_changed = True
+
         # старт нового уровня
         if end == 'end':
             self.current_level = (self.current_level + 1) % 5
@@ -215,6 +235,7 @@ class Game:
 
     # фунция запуска игры
     def game_run(self):
+        play_music(self.music)
         while self.game_running:
             self.events()
             self.update()

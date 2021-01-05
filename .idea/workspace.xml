@@ -19,20 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37043318-4c84-473d-b7ac-3851f2a3e807" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/big_levels/lvl1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big_levels/lvl2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big_levels/lvl3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big_levels/lvl4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big_levels/lvl5" afterDir="false" />
+    <list default="true" id="37043318-4c84-473d-b7ac-3851f2a3e807" name="Default Changelist" comment="переделана камера">
+      <change afterPath="$PROJECT_DIR$/battle_theme.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/calm_theme.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/lvl10" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/lvl6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/lvl7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/lvl8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/lvl9" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +57,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Yandex_pile" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager" selected="Python.main">
@@ -232,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608644017514</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="переделана камера">
+      <created>1609654664049</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1609654664049</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -260,7 +260,8 @@
     <MESSAGE value="баг фиксы для Bearded и функции take_damage" />
     <MESSAGE value="добавлено меню" />
     <MESSAGE value="добавлена камера и новые уровней" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлена камера и новые уровней" />
+    <MESSAGE value="переделана камера" />
+    <option name="LAST_COMMIT_MESSAGE" value="переделана камера" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

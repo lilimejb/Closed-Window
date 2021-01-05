@@ -119,6 +119,7 @@ class Player(Animated_Sprite):
         for enemy in self.enemies:
             if pg.sprite.collide_rect(self, enemy):
                 self.hp -= self.take_damage(ms, enemy.damage)
+                enemy.kill()
 
         # сбор еды
         for food in self.help:
