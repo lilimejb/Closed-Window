@@ -19,9 +19,28 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37043318-4c84-473d-b7ac-3851f2a3e807" name="Default Changelist" comment="добавлена музыка, которая меняется после &quot;зачистки&quot; локации">
+    <list default="true" id="37043318-4c84-473d-b7ac-3851f2a3e807" name="Default Changelist" comment="добавлена атака, но анимация кривая:(">
+      <change afterPath="$PROJECT_DIR$/images/hero_sprites/Take_hit/Take Hit - white silhouette.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/hero_sprites/Take_hit/take_hit1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/hero_sprites/Take_hit/take_hit2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/hero_sprites/Take_hit/take_hit3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/hero_sprites/Take_hit/take_hit4.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big_levels/lvl3" beforeDir="false" afterPath="$PROJECT_DIR$/big_levels/lvl3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big_levels/lvl4" beforeDir="false" afterPath="$PROJECT_DIR$/big_levels/lvl4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big_levels/lvl5" beforeDir="false" afterPath="$PROJECT_DIR$/big_levels/lvl5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/enemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/enemy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Take Hit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Take Hit/Take Hit - white silhouette.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Take Hit/Take Hit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Take Hit/Take Hit1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Take Hit/Take Hit2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Take Hit/Take Hit3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Take Hit/Take Hit4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/lvl2" beforeDir="false" afterPath="$PROJECT_DIR$/levels/lvl2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/lvl4" beforeDir="false" afterPath="$PROJECT_DIR$/levels/lvl4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/lvl5" beforeDir="false" afterPath="$PROJECT_DIR$/levels/lvl5" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_classes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
@@ -57,7 +76,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Yandex_pile" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager" selected="Python.main">
     <configuration name="config" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -102,6 +121,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main_classes" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Closed-Window" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_classes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="menu" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Closed-Window" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -126,6 +166,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.main_classes" />
         <item itemvalue="Python.config" />
         <item itemvalue="Python.menu" />
       </list>
@@ -238,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609833401898</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="добавлена атака, но анимация кривая:(">
+      <created>1609834593268</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1609834593269</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -268,6 +316,7 @@
     <MESSAGE value="добавлена камера и новые уровней" />
     <MESSAGE value="переделана камера" />
     <MESSAGE value="добавлена музыка, которая меняется после &quot;зачистки&quot; локации" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлена музыка, которая меняется после &quot;зачистки&quot; локации" />
+    <MESSAGE value="добавлена атака, но анимация кривая:(" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлена атака, но анимация кривая:(" />
   </component>
 </project>

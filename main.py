@@ -39,6 +39,7 @@ class Game:
         self.objects = pg.sprite.Group()
         self.coins = pg.sprite.Group()
         self.enemies = pg.sprite.Group()
+        self.spikes = pg.sprite.Group()
         self.solid_blocks = pg.sprite.Group()
         self.help = pg.sprite.Group()
         self.exits = pg.sprite.Group()
@@ -57,6 +58,7 @@ class Game:
         self.player.help = self.help
         self.player.coins = self.coins
         self.player.enemies = self.enemies
+        self.player.spikes = self.spikes
         self.player.exits = self.exits
         self.player.buffs = self.buffs
         self.player.solid_blocks = self.solid_blocks
@@ -76,6 +78,7 @@ class Game:
         self.objects = pg.sprite.Group()
         self.coins = pg.sprite.Group()
         self.enemies = pg.sprite.Group()
+        self.spikes = pg.sprite.Group()
         self.solid_blocks = pg.sprite.Group()
         self.help = pg.sprite.Group()
         self.exits = pg.sprite.Group()
@@ -87,6 +90,7 @@ class Game:
         self.player.help = self.help
         self.player.coins = self.coins
         self.player.enemies = self.enemies
+        self.player.spikes = self.spikes
         self.player.exits = self.exits
         self.player.buffs = self.buffs
         self.player.solid_blocks = self.solid_blocks
@@ -98,6 +102,8 @@ class Game:
     # функция перезапуска игры
     def restart(self):
         self.player.hp = self.player.start_hp
+        self.player.speed_max = self.player.speed_start
+        self.player.jump_power = self.player.jump_power_start
         self.player.money = 0
         self.load_sprites()
         self.current_level = 0
@@ -107,12 +113,8 @@ class Game:
         self.load_sprites()
 
     def load_map(self):
-        if random.randint(1, 2) == 1:
-            map_path = BIG_LEVELS[self.current_level]
-            self.camera_usage = True
-        else:
-            map_path = LEVELS[self.current_level]
-            self.camera_usage = False
+        map_path = LEVELS[self.current_level]
+        # self.camera_usage = False
 
         with open(map_path, 'r', encoding='UTF-8') as file:
             for y, line in enumerate(file):
@@ -164,6 +166,7 @@ class Game:
                             block.add(self.enemies)
                         if letter == 'S':
                             block = Spike(*pos, image=image)
+                            block.add(self.spikes)
                         block.add(self.objects)
 
     # обработка всех событий
@@ -205,14 +208,14 @@ class Game:
         # установка FPS
         ms = clock.tick(FPS)
 
-        if self.camera_usage:
-            # изменяем ракурс камеры
-            self.camera.update(self.player)
-            # обновляем положение всех спрайтов
-            for obj in self.objects:
-                self.camera.apply(obj)
+        # if self.camera_usage:
+        #     # изменяем ракурс камеры
+        #     self.camera.update(self.player)
+        #     # обновляем положение всех спрайтов
+        #     for obj in self.objects:
+        #         self.camera.apply(obj)
 
-        end = self.player.update(self.jump, self.fall, self.left, self.right, self.is_attacking, ms)
+        game_state = self.player.update(self.jump, self.fall, self.left, self.right, self.is_attacking, ms)
         self.help.update()
         self.coins.update()
         self.buffs.update()
@@ -229,9 +232,12 @@ class Game:
             self.has_changed = True
 
         # старт нового уровня
-        if end == 'end':
+        if game_state == 'end':
             self.current_level = (self.current_level + 1) % 5
             self.start_next_level()
+        #
+        # if game_state == 'game_over':
+        #     self.game_running = False
 
     def render(self):
         self.screen.blit(self.background, (0, 0))

@@ -47,13 +47,16 @@ class Enemy(Animated_Sprite):
                     self.way = 'left'
         self.rect.x += self.speed_x
 
+    def make_animation(self, **kwargs):
+        pass
+
 
 # Класс для врага "Бородач"
 class Bearded(Enemy):
     def __init__(self, x=300, y=300, size=64, speed=1, damage=4, image=ENEMIES['bearded']):
         super().__init__(x, y, size, speed, damage, image)
         self.name = 'bearded'
-        self.delta = 200
+        self.delta = 100
 
     def make_animation(self, **kwargs):
         self.animator_counters += 1
@@ -86,3 +89,4 @@ class Spike(Solid_Block):
     def __init__(self, x=None, y=None, damage=1, size=64, speed=10, image=ENEMIES['spike']):
         super().__init__(x, y, size, speed, image)
         self.damage = damage
+        self.name = 'spike'

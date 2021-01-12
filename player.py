@@ -7,6 +7,7 @@ import pygame as pg
 class Player(Animated_Sprite):
     coins = None
     enemies = None
+    spikes = None
     help = None
     solid_blocks = None
     exits = None
@@ -24,29 +25,42 @@ class Player(Animated_Sprite):
         self.image_flipped = pg.transform.flip(self.image, True, False)
         self.speed_y = 0
         self.speed_x = 0
-        self.speed_start = 2
-        self.speed_max = 5
-        self.speed_max_buffed = 10
+        self.speed_start = 5
+        self.speed_max = 10
+        self.speed_max_buffed = 15
         self.jump_power_start = self.jump_power = 12
         self.jump_power_max_buffed = 18
         self.on_the_ground = False
         self.damage_delay = 1000
         self.cooldown = self.damage_delay
+        self.attack_cooldown = self.damage_delay
 
     def set_position(self, x, y):
         self.rect.x, self.rect.y = x, y
         self.x_start, self.y_start = x, y
 
+    def respawn(self):
+        self.rect.topleft = (self.x_start, self.y_start)
+        self.money = self.money // 10
+        self.max_hp = 10
+        self.start_hp = self.hp = self.max_hp - 4
+        self.speed_y = 0
+        self.speed_x = 0
+        self.speed_max = self.speed_start
+        self.jump_power = self.jump_power_start
+
     def update(self, jump, fall, left, right, is_attacking, ms):
         collide = self.collide_check(is_attacking, ms)
         self.move(jump, fall, left, right)
-        self.make_animation(is_attacking)
+        game_state = self.make_animation(is_attacking, self.hp, collide)
         if self.hp > self.max_hp:
             self.hp = self.max_hp
-        elif self.hp <= 0:
+        if self.hp <= 0:
             self.respawn()
         if collide == 'end':
             return 'end'
+        # if game_state == 'game_over':
+        #     return 'game_over'
 
     def move(self, jump, fall, left, right):
         # обработка движения по оси x
@@ -118,9 +132,20 @@ class Player(Animated_Sprite):
         # столкновение с противниками
         for enemy in self.enemies:
             if pg.sprite.collide_rect(self, enemy):
-                self.hp -= self.take_damage(ms, enemy.damage)
+                damage = self.take_damage(ms, enemy.damage)
+                self.hp -= damage
                 if is_attacking:
                     enemy.kill()
+                    self.money += 5
+                if damage:
+                    return 'hit_taken'
+
+        for spike in self.spikes:
+            if pg.sprite.collide_rect(self, spike):
+                damage = self.take_damage(ms, spike.damage)
+                self.hp -= damage
+                if damage:
+                    return 'hit_taken'
 
         # сбор еды
         for food in self.help:
@@ -152,18 +177,18 @@ class Player(Animated_Sprite):
 
         # столкновение с "колодцем"
         for block in self.exits:
-            if pg.sprite.collide_rect(self, block) and len(self.coins) < 2:
+            if pg.sprite.collide_rect(self, block) and len(self.coins) < 2 and not self.enemies:
                 return 'end'
 
-    def respawn(self):
-        self.rect.topleft = (self.x_start, self.y_start)
-        self.money = self.money // 10
-        self.max_hp = 10
-        self.start_hp = self.hp = self.max_hp - 4
-        self.speed_y = 0
-        self.speed_x = 0
-        self.speed_max = 5
-        self.jump_power = self.jump_power_start
+    # def respawn(self):
+    #     self.rect.topleft = (self.x_start, self.y_start)
+    #     self.money = self.money // 10
+    #     self.max_hp = 10
+    #     self.start_hp = self.hp = self.max_hp - 4
+    #     self.speed_y = 0
+    #     self.speed_x = 0
+    #     self.speed_max = 5
+    #     self.jump_power = self.jump_power_start
 
     def take_damage(self, ms, damage):
         if self.cooldown < self.damage_delay:

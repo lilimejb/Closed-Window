@@ -90,42 +90,72 @@ class Animated_Sprite(Sprite):
         for key in self.images:
             self.flipped_images[key] = [pg.transform.flip(i, True, False) for i in self.images[key]]
 
-    def make_animation(self, is_attacking):
-        print(is_attacking)
+    def make_animation(self, is_attacking, hp, collide):
         self.animator_counters += 1
+        if is_attacking:
+            if self.animator_counters == 3:
+                self.make_attack_animation()
+                self.frames += 1
+                self.animator_counters = 0
+        if collide == 'hit_taken':
+            if self.animator_counters == 5:
+                self.make_take_hit_animation()
+                self.frames += 1
+                self.animator_counters = 0
+        if hp <= 0:
+            if self.animator_counters == 5:
+                self.make_death_animation()
+                self.frames += 1
+                self.animator_counters = 0
+                return 'game_over'
         if self.animator_counters == 5:
-            if is_attacking:
-                if self.is_flipped:
-                    self.image = self.flipped_images['attack'][self.frames % len(self.images['attack'])]
-                else:
-                    self.image = self.images['attack'][self.frames % len(self.images['attack'])]
-            else:
-                if self.speed_x > 0:
-                    self.is_flipped = False
-                if self.speed_x < 0:
-                    self.is_flipped = True
-                if self.speed_x == 0 and self.speed_y == 0:
-                    if self.is_flipped:
-                        self.image = self.flipped_images['idle'][self.frames % len(self.images['idle'])]
-                    else:
-                        self.image = self.images['idle'][self.frames % len(self.images['idle'])]
-
-                elif self.speed_y < 0:
-                    if self.is_flipped:
-                        self.image = self.flipped_images['jump'][self.frames % len(self.images['jump'])]
-                    else:
-                        self.image = self.images['jump'][self.frames % len(self.images['jump'])]
-
-                elif self.speed_y > 0:
-                    if self.is_flipped:
-                        self.image = self.flipped_images['fall'][self.frames % len(self.images['fall'])]
-                    else:
-                        self.image = self.images['fall'][self.frames % len(self.images['fall'])]
-
-                elif self.speed_x > 0:
-                    self.image = self.images['run'][self.frames % len(self.images['run'])]
-
-                elif self.speed_x < 0:
-                    self.image = self.flipped_images['run'][self.frames % len(self.images['run'])]
+            self.make_move_animation(self.speed_x, self.speed_y)
             self.frames += 1
             self.animator_counters = 0
+
+    def make_death_animation(self):
+        if self.is_flipped:
+            self.image = self.flipped_images['death'][self.frames % len(self.images['death'])]
+        else:
+            self.image = self.images['death'][self.frames % len(self.images['death'])]
+
+    def make_move_animation(self, speed_x, speed_y):
+        if speed_x > 0:
+            self.is_flipped = False
+        if speed_x < 0:
+            self.is_flipped = True
+        if speed_x == 0 and speed_y == 0:
+            if self.is_flipped:
+                self.image = self.flipped_images['idle'][self.frames % len(self.images['idle'])]
+            else:
+                self.image = self.images['idle'][self.frames % len(self.images['idle'])]
+
+        elif speed_y < 0:
+            if self.is_flipped:
+                self.image = self.flipped_images['jump'][self.frames % len(self.images['jump'])]
+            else:
+                self.image = self.images['jump'][self.frames % len(self.images['jump'])]
+
+        elif speed_y > 0:
+            if self.is_flipped:
+                self.image = self.flipped_images['fall'][self.frames % len(self.images['fall'])]
+            else:
+                self.image = self.images['fall'][self.frames % len(self.images['fall'])]
+
+        elif speed_x > 0:
+            self.image = self.images['run'][self.frames % len(self.images['run'])]
+
+        elif speed_x < 0:
+            self.image = self.flipped_images['run'][self.frames % len(self.images['run'])]
+
+    def make_attack_animation(self):
+        if self.is_flipped:
+            self.image = self.flipped_images['attack'][self.frames % len(self.images['attack'])]
+        else:
+            self.image = self.images['attack'][self.frames % len(self.images['attack'])]
+
+    def make_take_hit_animation(self):
+        if self.is_flipped:
+            self.image = self.flipped_images['take_hit'][self.frames % len(self.images['take_hit'])]
+        else:
+            self.image = self.images['take_hit'][self.frames % len(self.images['take_hit'])]
