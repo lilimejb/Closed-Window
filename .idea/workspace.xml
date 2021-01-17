@@ -22,30 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37043318-4c84-473d-b7ac-3851f2a3e807" name="Default Changelist" comment="лучше атака">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+    <list default="true" id="37043318-4c84-473d-b7ac-3851f2a3e807" name="Default Changelist" comment="камера и уровни для неё">
+      <change afterPath="$PROJECT_DIR$/end_window.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big_levels/lvl1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/big_levels/lvl2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/big_levels/lvl3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/big_levels/lvl4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/big_levels/lvl5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Attack/Attack.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Death/Death.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Fall/Fall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Idle/Idle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Jump/Jump.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Run/Run.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Take_hit/Take Hit - white silhouette.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/lvl1" beforeDir="false" afterPath="$PROJECT_DIR$/levels/lvl1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/lvl2" beforeDir="false" afterPath="$PROJECT_DIR$/levels/lvl2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/lvl3" beforeDir="false" afterPath="$PROJECT_DIR$/levels/lvl3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/lvl4" beforeDir="false" afterPath="$PROJECT_DIR$/levels/lvl4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/lvl5" beforeDir="false" afterPath="$PROJECT_DIR$/levels/lvl5" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_classes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610452820854</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="камера и уровни для неё">
+      <created>1610858281617</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1610858281617</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -328,6 +316,7 @@
     <MESSAGE value="добавлена музыка, которая меняется после &quot;зачистки&quot; локации" />
     <MESSAGE value="добавлена атака, но анимация кривая:(" />
     <MESSAGE value="лучше атака" />
-    <option name="LAST_COMMIT_MESSAGE" value="лучше атака" />
+    <MESSAGE value="камера и уровни для неё" />
+    <option name="LAST_COMMIT_MESSAGE" value="камера и уровни для неё" />
   </component>
 </project>

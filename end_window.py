@@ -3,7 +3,7 @@ from config import *
 
 
 # Класс, отвечающий за всё что связанно с начальным экраном
-class Menu:
+class End_window:
     def __init__(self):
         self.font = pg.font.SysFont(None, 64)
         self.running = True
@@ -18,26 +18,24 @@ class Menu:
             if event.type == pg.QUIT:
                 self.running = False
                 return 'all down'
-            if event.type == pg.KEYDOWN:
-                if event.key == pg.K_SPACE:
-                    self.running = False
-                    return 'window down'
 
-    def render_text(self):
-        text = f'Нажмите "Пробел" чтобы начать'
-        image = self.font.render(text, True, (69, 126, 172))
-        image_rect = image.get_rect()
-        image_rect.center = WIN_SIZE[0] // 2, int(WIN_SIZE[1] // 2 * 0.25)
-        self.screen.blit(image, image_rect)
+    def render_text(self, time, money, hp):
+        text = [f'Вы прошли Клозед Виндоу!',
+                f'Время в игре: {time}',
+                f'Монеты: {money}']
+        for i in range(len(text)):
+            image = self.font.render(text[i], True, (69, 126, 172))
+            image_rect = image.get_rect()
+            image_rect.center = WIN_SIZE[0] // 2, int(WIN_SIZE[1] // 2 * 0.25) + i * 100
+            self.screen.blit(image, image_rect)
 
-    def render(self):
+    def render(self, time, money, hp):
         self.screen.blit(self.background, (0, 0))
-        self.render_text()
+        self.render_text(time, money, hp)
         pg.display.update()
 
     # функция запуска меню
-    def run(self):
+    def run(self, time, money, hp):
         while self.running:
-            down = self.events()
-            self.render()
-        return down
+            self.events()
+            self.render(time, money, hp)

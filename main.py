@@ -4,6 +4,7 @@ from utility import *
 from enemy import *
 from menu import Menu
 from main_classes import Camera
+from end_window import End_window
 
 clock = pg.time.Clock()
 
@@ -23,6 +24,7 @@ class Game:
         self.game_running = True
 
         self.menu = Menu()
+        self.end_window = End_window()
         self.player = Player()
         self.camera = Camera()
 
@@ -66,6 +68,7 @@ class Game:
         self.music = BATTLE_THEME
         self.is_playing = True
         self.has_changed = False
+        self.played = 0
 
     # функция для запуска меню
     def start_menu(self):
@@ -211,6 +214,8 @@ class Game:
     def update(self):
         # установка FPS
         ms = clock.tick(FPS)
+        self.played += ms / 1000
+        self.played = round(self.played, 2)
 
         if self.camera_usage:
             # изменяем ракурс камеры
@@ -224,7 +229,7 @@ class Game:
         self.coins.update()
         self.buffs.update()
         self.enemies.update()
-        pg.display.set_caption(f'Player`s money: {self.player.money} HP: {self.player.hp}')
+        pg.display.set_caption(f'Player`s money: {self.player.money} HP: {self.player.hp} Played {self.played}')
 
         if not self.enemies:
             self.music = CALM_THEME
@@ -237,14 +242,16 @@ class Game:
 
         # старт нового уровня
         if game_state == 'end':
-            self.current_level = (self.current_level + 1) % 5
-            self.start_next_level()
+            self.current_level += 1
+            if self.current_level > 4:
+                self.is_playing = False
+                self.game_running = False
+                self.running = False
+            else:
+                self.start_next_level()
         if game_state == 'dead':
             self.current_level = 0
             self.start_next_level()
-        #
-        # if game_state == 'game_over':
-        #     self.game_running = False
 
     def render(self):
         self.screen.blit(self.background, (0, 0))
@@ -270,6 +277,8 @@ class Game:
             else:
                 self.game_running = True
                 self.game_run()
+        if self.current_level > 4:
+            self.end_window.run(self.played, self.player.money, self.player.hp)
 
 
 if __name__ == '__main__':
