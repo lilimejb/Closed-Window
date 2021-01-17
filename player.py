@@ -57,6 +57,7 @@ class Player(Animated_Sprite):
             self.hp = self.max_hp
         if self.hp <= 0:
             self.respawn()
+            return 'dead'
         if collide == 'end':
             return 'end'
         # if game_state == 'game_over':
@@ -179,16 +180,6 @@ class Player(Animated_Sprite):
         for block in self.exits:
             if pg.sprite.collide_rect(self, block) and len(self.coins) < 2 and not self.enemies:
                 return 'end'
-
-    # def respawn(self):
-    #     self.rect.topleft = (self.x_start, self.y_start)
-    #     self.money = self.money // 10
-    #     self.max_hp = 10
-    #     self.start_hp = self.hp = self.max_hp - 4
-    #     self.speed_y = 0
-    #     self.speed_x = 0
-    #     self.speed_max = 5
-    #     self.jump_power = self.jump_power_start
 
     def take_damage(self, ms, damage):
         if self.cooldown < self.damage_delay:

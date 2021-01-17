@@ -107,6 +107,7 @@ class Game:
         self.player.money = 0
         self.load_sprites()
         self.current_level = 0
+        self.start_next_level()
 
     # функция загрузки следующего уровня
     def start_next_level(self):
@@ -114,7 +115,10 @@ class Game:
 
     def load_map(self):
         map_path = LEVELS[self.current_level]
-        # self.camera_usage = False
+        if self.current_level % 2 != 1:
+            self.camera_usage = False
+        else:
+            self.camera_usage = True
 
         with open(map_path, 'r', encoding='UTF-8') as file:
             for y, line in enumerate(file):
@@ -208,12 +212,12 @@ class Game:
         # установка FPS
         ms = clock.tick(FPS)
 
-        # if self.camera_usage:
-        #     # изменяем ракурс камеры
-        #     self.camera.update(self.player)
-        #     # обновляем положение всех спрайтов
-        #     for obj in self.objects:
-        #         self.camera.apply(obj)
+        if self.camera_usage:
+            # изменяем ракурс камеры
+            self.camera.update(self.player)
+            # обновляем положение всех спрайтов
+            for obj in self.objects:
+                self.camera.apply(obj)
 
         game_state = self.player.update(self.jump, self.fall, self.left, self.right, self.is_attacking, ms)
         self.help.update()
@@ -234,6 +238,9 @@ class Game:
         # старт нового уровня
         if game_state == 'end':
             self.current_level = (self.current_level + 1) % 5
+            self.start_next_level()
+        if game_state == 'dead':
+            self.current_level = 0
             self.start_next_level()
         #
         # if game_state == 'game_over':

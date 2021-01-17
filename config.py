@@ -129,71 +129,7 @@ WAGON = os.path.join(level_items, 'wagon.png')
 WELL = os.path.join(level_items, 'well.png')
 
 # ассеты для еды
-# TODO сделать списочным выражением
-FOOD = [os.path.join(heal, 'Apple.png'),
-        os.path.join(heal, 'AppleWorm.png'),
-        os.path.join(heal, 'Avocado.png'),
-        os.path.join(heal, 'Bacon.png'),
-        os.path.join(heal, 'Beer.png'),
-        os.path.join(heal, 'Boar.png'),
-        os.path.join(heal, 'Bread.png'),
-        os.path.join(heal, 'Brownie.png'),
-        os.path.join(heal, 'Bug.png'),
-        os.path.join(heal, 'Cheese.png'),
-        os.path.join(heal, 'Cherry.png'),
-        os.path.join(heal, 'Chicken.png'),
-        os.path.join(heal, 'ChickenLeg.png'),
-        os.path.join(heal, 'Cookie.png'),
-        os.path.join(heal, 'DragonFruit.png'),
-        os.path.join(heal, 'Eggplant.png'),
-        os.path.join(heal, 'Eggs.png'),
-        os.path.join(heal, 'Fish.png'),
-        os.path.join(heal, 'FishFillet.png'),
-        os.path.join(heal, 'FishSteak.png'),
-        os.path.join(heal, 'Grub.png'),
-        os.path.join(heal, 'Grub.png'),
-        os.path.join(heal, 'Honey.png'),
-        os.path.join(heal, 'Honeycomb.png'),
-        os.path.join(heal, 'Jam.png'),
-        os.path.join(heal, 'Jerky.png'),
-        os.path.join(heal, 'Lemon.png'),
-        os.path.join(heal, 'Marmalade.png'),
-        os.path.join(heal, 'MelonCantaloupe.png'),
-        os.path.join(heal, 'MelonHoneydew.png'),
-        os.path.join(heal, 'MelonWater.png'),
-        os.path.join(heal, 'Moonshine.png'),
-        os.path.join(heal, 'Olive.png'),
-        os.path.join(heal, 'Onion.png'),
-        os.path.join(heal, 'PepperRed.png'),
-        os.path.join(heal, 'Pickle.png'),
-        os.path.join(heal, 'PickledEggs.png'),
-        os.path.join(heal, 'PieApple.png'),
-        os.path.join(heal, 'PieLemon.png'),
-        os.path.join(heal, 'PiePumpkin.png'),
-        os.path.join(heal, 'Pineapple.png'),
-        os.path.join(heal, 'Potato.png'),
-        os.path.join(heal, 'PotatoRed.png'),
-        os.path.join(heal, 'Pretzel.png'),
-        os.path.join(heal, 'Ribs.png'),
-        os.path.join(heal, 'Rol.png'),
-        os.path.join(heal, 'Saki.png'),
-        os.path.join(heal, 'PepperGreen.png'),
-        os.path.join(heal, 'Peach.png'),
-        os.path.join(heal, 'Pepperoni.png'),
-        os.path.join(heal, 'Sardines.png'),
-        os.path.join(heal, 'Sashimi.png'),
-        os.path.join(heal, 'Sausages.png'),
-        os.path.join(heal, 'Shrimp.png'),
-        os.path.join(heal, 'Steak.png'),
-        os.path.join(heal, 'Stein.png'),
-        os.path.join(heal, 'Strawberry.png'),
-        os.path.join(heal, 'Sushi.png'),
-        os.path.join(heal, 'Tart.png'),
-        os.path.join(heal, 'Tomato.png'),
-        os.path.join(heal, 'Turnip.png'),
-        os.path.join(heal, 'Waffles.png'),
-        os.path.join(heal, 'Whiskey.png'),
-        os.path.join(heal, 'Wine.png')]
+FOOD = [os.path.join(heal, 'Apple.png')]
 
 # ассеты для монет
 # TODO сделать списочным выражением
@@ -227,7 +163,6 @@ ENEMIES = {'spike': os.path.join(enemies, 'spike.png'),
 
 # уровни
 LEVELS = [os.path.join(levels, f'lvl{n + 1}') for n in range(len([f for f in os.listdir(levels)]))]
-BIG_LEVELS = [os.path.join(big_levels, f'lvl{n + 1}') for n in range(len([f for f in os.listdir(big_levels)]))]
 
 # блоки на карте
 MAP_BLOCKS = {'B': BLOCK_ASSETS['ground'][0],

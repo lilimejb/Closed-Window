@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -19,26 +22,25 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37043318-4c84-473d-b7ac-3851f2a3e807" name="Default Changelist" comment="добавлена атака, но анимация кривая:(">
-      <change afterPath="$PROJECT_DIR$/images/hero_sprites/Take_hit/Take Hit - white silhouette.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/hero_sprites/Take_hit/take_hit1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/hero_sprites/Take_hit/take_hit2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/hero_sprites/Take_hit/take_hit3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/hero_sprites/Take_hit/take_hit4.png" afterDir="false" />
+    <list default="true" id="37043318-4c84-473d-b7ac-3851f2a3e807" name="Default Changelist" comment="лучше атака">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big_levels/lvl3" beforeDir="false" afterPath="$PROJECT_DIR$/big_levels/lvl3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big_levels/lvl4" beforeDir="false" afterPath="$PROJECT_DIR$/big_levels/lvl4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big_levels/lvl5" beforeDir="false" afterPath="$PROJECT_DIR$/big_levels/lvl5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big_levels/lvl1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/big_levels/lvl2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/big_levels/lvl3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/big_levels/lvl4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/big_levels/lvl5" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/enemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/enemy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Take Hit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Take Hit/Take Hit - white silhouette.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Take Hit/Take Hit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Take Hit/Take Hit1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Take Hit/Take Hit2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Take Hit/Take Hit3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Take Hit/Take Hit4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Attack/Attack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Death/Death.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Fall/Fall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Idle/Idle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Jump/Jump.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Run/Run.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Take_hit/Take Hit - white silhouette.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/lvl1" beforeDir="false" afterPath="$PROJECT_DIR$/levels/lvl1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/levels/lvl2" beforeDir="false" afterPath="$PROJECT_DIR$/levels/lvl2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/lvl3" beforeDir="false" afterPath="$PROJECT_DIR$/levels/lvl3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/levels/lvl4" beforeDir="false" afterPath="$PROJECT_DIR$/levels/lvl4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/levels/lvl5" beforeDir="false" afterPath="$PROJECT_DIR$/levels/lvl5" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
@@ -75,7 +77,8 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Yandex_pile" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager" selected="Python.main">
@@ -286,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609834593269</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="лучше атака">
+      <created>1610452820854</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1610452820854</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -317,6 +327,7 @@
     <MESSAGE value="переделана камера" />
     <MESSAGE value="добавлена музыка, которая меняется после &quot;зачистки&quot; локации" />
     <MESSAGE value="добавлена атака, но анимация кривая:(" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлена атака, но анимация кривая:(" />
+    <MESSAGE value="лучше атака" />
+    <option name="LAST_COMMIT_MESSAGE" value="лучше атака" />
   </component>
 </project>
