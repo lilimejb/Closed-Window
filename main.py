@@ -245,7 +245,7 @@ class Game:
         # старт нового уровня
         if game_state == 'end':
             self.current_level += 1
-            if self.current_level > 0:
+            if self.current_level > 4:
                 self.game_running = False
                 self.right = self.left = self.jump = self.fall = False
             else:
@@ -278,7 +278,7 @@ class Game:
             else:
                 self.game_running = True
                 self.game_run()
-            if self.current_level > 0:
+            if self.current_level > 4:
                 state = self.end_window.run(self.played, self.player.money, self.player.hp)
                 self.restart()
                 self.played = 0
