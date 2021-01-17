@@ -18,16 +18,24 @@ class End_window:
             if event.type == pg.QUIT:
                 self.running = False
                 return 'all down'
+            if event.type == pg.KEYDOWN:
+                if event.key == pg.K_r:
+                    return 'restart'
 
     def render_text(self, time, money, hp):
         text = [f'Вы прошли Клозед Виндоу!',
                 f'Время в игре: {time}',
                 f'Монеты: {money}']
+        text_restart = 'Нажмите "R" чтобы начать заново'
         for i in range(len(text)):
             image = self.font.render(text[i], True, (69, 126, 172))
             image_rect = image.get_rect()
             image_rect.center = WIN_SIZE[0] // 2, int(WIN_SIZE[1] // 2 * 0.25) + i * 100
             self.screen.blit(image, image_rect)
+        image = self.font.render(text_restart, True, (69, 126, 172))
+        image_rect = image.get_rect()
+        image_rect.center = WIN_SIZE[0] // 2, int(WIN_SIZE[1] // 2 * 0.25) + ((i + 3) * 100) - 50
+        self.screen.blit(image, image_rect)
 
     def render(self, time, money, hp):
         self.screen.blit(self.background, (0, 0))
@@ -37,5 +45,8 @@ class End_window:
     # функция запуска меню
     def run(self, time, money, hp):
         while self.running:
-            self.events()
+            state = self.events()
             self.render(time, money, hp)
+            if state == 'restart':
+                break
+        return state

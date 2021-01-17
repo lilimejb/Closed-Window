@@ -1,10 +1,10 @@
 # подключение библиотек
+from end_window import End_window
+from enemy import *
+from main_classes import Camera
+from menu import Menu
 from player import Player
 from utility import *
-from enemy import *
-from menu import Menu
-from main_classes import Camera
-from end_window import End_window
 
 clock = pg.time.Clock()
 
@@ -104,6 +104,8 @@ class Game:
 
     # функция перезапуска игры
     def restart(self):
+        self.player.speed_x = 0
+        self.player.speed_y = 0
         self.player.hp = self.player.start_hp
         self.player.speed_max = self.player.speed_start
         self.player.jump_power = self.player.jump_power_start
@@ -243,10 +245,9 @@ class Game:
         # старт нового уровня
         if game_state == 'end':
             self.current_level += 1
-            if self.current_level > 4:
-                self.is_playing = False
+            if self.current_level > 0:
                 self.game_running = False
-                self.running = False
+                self.right = self.left = self.jump = self.fall = False
             else:
                 self.start_next_level()
         if game_state == 'dead':
@@ -277,8 +278,14 @@ class Game:
             else:
                 self.game_running = True
                 self.game_run()
-        if self.current_level > 4:
-            self.end_window.run(self.played, self.player.money, self.player.hp)
+            if self.current_level > 0:
+                state = self.end_window.run(self.played, self.player.money, self.player.hp)
+                self.restart()
+                self.played = 0
+                if state == 'restart':
+                    self.game_running = True
+                else:
+                    break
 
 
 if __name__ == '__main__':

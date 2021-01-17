@@ -22,11 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37043318-4c84-473d-b7ac-3851f2a3e807" name="Default Changelist" comment="камера и уровни для неё">
-      <change afterPath="$PROJECT_DIR$/end_window.py" afterDir="false" />
+    <list default="true" id="37043318-4c84-473d-b7ac-3851f2a3e807" name="Default Changelist" comment="финальное окно и баг фикс">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/end_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/end_window.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610858281617</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="финальное окно и баг фикс">
+      <created>1610860102369</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1610860102369</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -317,6 +324,7 @@
     <MESSAGE value="добавлена атака, но анимация кривая:(" />
     <MESSAGE value="лучше атака" />
     <MESSAGE value="камера и уровни для неё" />
-    <option name="LAST_COMMIT_MESSAGE" value="камера и уровни для неё" />
+    <MESSAGE value="финальное окно и баг фикс" />
+    <option name="LAST_COMMIT_MESSAGE" value="финальное окно и баг фикс" />
   </component>
 </project>

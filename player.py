@@ -60,8 +60,6 @@ class Player(Animated_Sprite):
             return 'dead'
         if collide == 'end':
             return 'end'
-        # if game_state == 'game_over':
-        #     return 'game_over'
 
     def move(self, jump, fall, left, right):
         # обработка движения по оси x
@@ -155,7 +153,6 @@ class Player(Animated_Sprite):
                 food.kill()
 
         # сбор положительных/отрицательных эффектов
-        # TODO реалицовать функцию нормально
         for buff in self.buffs:
             if pg.sprite.collide_rect(self, buff):
                 if buff.name == 'Speed_boost':
@@ -179,6 +176,8 @@ class Player(Animated_Sprite):
         # столкновение с "колодцем"
         for block in self.exits:
             if pg.sprite.collide_rect(self, block) and len(self.coins) < 2 and not self.enemies:
+                self.speed_x = 0
+                self.speed_y = 0
                 return 'end'
 
     def take_damage(self, ms, damage):
