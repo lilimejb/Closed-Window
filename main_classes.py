@@ -1,5 +1,3 @@
-import random
-
 import pygame as pg
 
 from config import *
@@ -36,19 +34,10 @@ class Solid_Block(Sprite):
 class Consumable(Sprite):
     def __init__(self, x=None, y=None, size=100, speed=10, image=BLOCK_ASSETS['ground'][0]):
         super().__init__(x, y, size, speed, image)
-        self.ticks = random.choice(range(0, 360, 5))
-        self.forward = 1
         self.spawn = self.rect.topleft
 
     def update(self, *args):
         pass
-        # if self.ticks >= 360:
-        #     self.ticks -= 360
-        # self.ticks += 5
-        # if not self.speed:
-        #     return
-        # not_true_y = sin(radians(self.ticks)) * self.speed
-        # self.rect.y = self.spawn[1] + not_true_y
 
 
 class Camera:
@@ -93,31 +82,14 @@ class Animated_Sprite(Sprite):
     def make_animation(self, is_attacking, hp, collide):
         self.animator_counters += 1
         if is_attacking:
-            if self.animator_counters == 3:
+            if self.animator_counters == 2:
                 self.make_attack_animation()
                 self.frames += 1
                 self.animator_counters = 0
-        if collide == 'hit_taken':
-            if self.animator_counters == 5:
-                self.make_take_hit_animation()
-                self.frames += 1
-                self.animator_counters = 0
-        if hp <= 0:
-            if self.animator_counters == 5:
-                self.make_death_animation()
-                self.frames += 1
-                self.animator_counters = 0
-                return 'game_over'
         if self.animator_counters == 5:
             self.make_move_animation(self.speed_x, self.speed_y)
             self.frames += 1
             self.animator_counters = 0
-
-    def make_death_animation(self):
-        if self.is_flipped:
-            self.image = self.flipped_images['death'][self.frames % len(self.images['death'])]
-        else:
-            self.image = self.images['death'][self.frames % len(self.images['death'])]
 
     def make_move_animation(self, speed_x, speed_y):
         if speed_x > 0:
@@ -152,10 +124,4 @@ class Animated_Sprite(Sprite):
         if self.is_flipped:
             self.image = self.flipped_images['attack'][self.frames % len(self.images['attack'])]
         else:
-            self.image = self.images['attack'][self.frames % len(self.images['attack'])]
-
-    def make_take_hit_animation(self):
-        if self.is_flipped:
-            self.image = self.flipped_images['take_hit'][self.frames % len(self.images['take_hit'])]
-        else:
-            self.image = self.images['take_hit'][self.frames % len(self.images['take_hit'])]
+            self.image = self.images['attack'][self.frames % len(self.images['attack'])]\

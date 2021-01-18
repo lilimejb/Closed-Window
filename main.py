@@ -9,6 +9,7 @@ from utility import *
 clock = pg.time.Clock()
 
 
+# функция запуска музыки
 def play_music(music):
     pg.mixer.init()
     pg.mixer.music.load(music)
@@ -20,24 +21,29 @@ class Game:
     def __init__(self):
         pg.init()
 
+        # инициализая будевых переменных для запуска игры
         self.running = True
         self.game_running = True
 
+        # инициализация экзэмпляров классов
         self.menu = Menu()
         self.end_window = End_window()
         self.player = Player()
         self.camera = Camera()
 
+        # создание экрана
         self.screen = pg.display.set_mode(WIN_SIZE)
         self.background = pg.image.load(BACKGROUND)
         self.background = pg.transform.scale(self.background, WIN_SIZE)
 
+        # инициализация булевых переменных для действий игрока
         self.right = False
         self.left = False
         self.jump = False
         self.fall = False
         self.is_attacking = False
 
+        # инициалицация основных групп спрайтов
         self.objects = pg.sprite.Group()
         self.coins = pg.sprite.Group()
         self.enemies = pg.sprite.Group()
@@ -47,16 +53,16 @@ class Game:
         self.exits = pg.sprite.Group()
         self.buffs = pg.sprite.Group()
 
+        # загрузка уровня
         self.current_level = 0
         self.load_map()
-
+        
         self.camera_usage = True
 
         for enemy in self.enemies:
             if enemy.name == 'bearded':
                 enemy.solid_blocks = self.solid_blocks
 
-        # TODO сделать список групп
         self.player.help = self.help
         self.player.coins = self.coins
         self.player.enemies = self.enemies
@@ -76,7 +82,6 @@ class Game:
         return down
 
     # функция создающая группы спрайтов и экзэмпляры классов
-    # TODO сделать код чище и переписать логику появления игрока
     def load_sprites(self):
         self.objects = pg.sprite.Group()
         self.coins = pg.sprite.Group()
@@ -106,6 +111,7 @@ class Game:
     def restart(self):
         self.player.speed_x = 0
         self.player.speed_y = 0
+        self.played = 0
         self.player.hp = self.player.start_hp
         self.player.speed_max = self.player.speed_start
         self.player.jump_power = self.player.jump_power_start
@@ -128,7 +134,6 @@ class Game:
         with open(map_path, 'r', encoding='UTF-8') as file:
             for y, line in enumerate(file):
                 for x, letter in enumerate(line):
-                    # TODO сделать как сказал Лёша
                     if letter in MAP_BLOCKS.keys():
                         pos = (x * TILE_SIZE, y * TILE_SIZE)
                         image = MAP_BLOCKS[letter]
@@ -164,12 +169,10 @@ class Game:
                                 block.name = 'Speed_down'
                                 self.buffs.add(block)
                         # установка координат выхода
-                        # TODO перенести выход в Solid_blocks
                         if letter == 'E':
                             block = Level_end(*pos, image=image)
                             block.add(self.exits)
                         # установка координат противников
-                        # TODO перенести противников в Solid_blocks
                         if letter == 'V':
                             block = Bearded(*pos, image=image)
                             block.add(self.enemies)
@@ -280,8 +283,8 @@ class Game:
                 self.game_run()
             if self.current_level > 4:
                 state = self.end_window.run(self.played, self.player.money, self.player.hp)
+                self.current_level = 0
                 self.restart()
-                self.played = 0
                 if state == 'restart':
                     self.game_running = True
                 else:

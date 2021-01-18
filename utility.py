@@ -1,5 +1,5 @@
 from config import *
-from main_classes import *
+from main_classes import Consumable, Solid_Block
 
 
 # Класс Монеты
@@ -11,7 +11,7 @@ class Coin(Consumable):
 
 # Класс Аптечки
 class Medicine(Consumable):
-    def __init__(self, x=None, y=None, healing=500, size=50, speed=10, image=FOOD[0]):
+    def __init__(self, x=None, y=None, healing=2, size=50, speed=10, image=FOOD[0]):
         super().__init__(x, y, size, speed, image)
         self.heal = healing
 

@@ -19,7 +19,6 @@ buffs = os.path.join(consumable, 'buffs')
 coins = os.path.join(consumable, 'coins')
 enemies = os.path.join(images, 'enemies')
 levels = os.path.join('levels')
-big_levels = os.path.join('big_levels')
 
 # путь к папкам с картинками игрока
 idle = os.path.join(hero_sprites, 'Idle')
@@ -66,66 +65,18 @@ PLAYER_ASSETS = {'idle': [os.path.join(idle, 'idle1.png'),
                          os.path.join(run, 'run6.png'),
                          os.path.join(run, 'run7.png'),
                          os.path.join(run, 'run8.png')],
-                 'take_hit': [os.path.join(take_hit, 'take_hit1.png'),
-                              os.path.join(take_hit, 'take_hit2.png'),
-                              os.path.join(take_hit, 'take_hit3.png'),
-                              os.path.join(take_hit, 'take_hit4.png')],
                  'fall': [os.path.join(fall, 'fall1.png'),
                           os.path.join(fall, 'fall2.png')]}
 
 # ассеты для блоков
 # TODO сделать списочным выражением
-BLOCK_ASSETS = {'ground': [os.path.join(blocks_sprites, 'ground.png'),
-                           os.path.join(blocks_sprites, 'ground-b.png'),
-                           os.path.join(blocks_sprites, 'ground-corner.png'),
-                           os.path.join(blocks_sprites, 'ground-right-corner.png'),
-                           os.path.join(blocks_sprites, 'ground-shadow.png'),
-                           os.path.join(blocks_sprites, 'ground-wall.png'),
-                           os.path.join(blocks_sprites, 'ground-wall-b.png'),
-                           os.path.join(blocks_sprites, 'ground-wood-legs.png')],
-                'roof': [os.path.join(blocks_sprites, 'left-roof.png'),
-                         os.path.join(blocks_sprites, 'right-roof.png'),
-                         os.path.join(blocks_sprites, 'roof.png')],
-                'corner': [os.path.join(blocks_sprites, 'left-corner.png'),
-                           os.path.join(blocks_sprites, 'right-corner.png')],
-                'slope': [os.path.join(blocks_sprites, 'slope.png'),
-                          os.path.join(blocks_sprites, 'left-slope.png'),
-                          os.path.join(blocks_sprites, 'right-slope.png')],
-                'stairs': [os.path.join(blocks_sprites, 'stairs.png'),
-                           os.path.join(blocks_sprites, 'stairs-left.png'),
-                           os.path.join(blocks_sprites, 'stairs-right.png'),
-                           os.path.join(blocks_sprites, 'stairs-mirror.png'),
-                           os.path.join(blocks_sprites, 'stairs-mirror-left.png'),
-                           os.path.join(blocks_sprites, 'stairs-mirror-right.png'),
-                           os.path.join(blocks_sprites, 'stairs-wall.png'),
-                           os.path.join(blocks_sprites, 'stairs-wall-left.png'),
-                           os.path.join(blocks_sprites, 'stairs-wall-right.png'),
-                           os.path.join(blocks_sprites, 'stairs-wall-mirror.png'),
-                           os.path.join(blocks_sprites, 'stairs-wall-mirror-left.png'),
-                           os.path.join(blocks_sprites, 'stairs-wall-mirror-right.png')],
-                'top': [os.path.join(blocks_sprites, 'top-wood.png.png'),
-                        os.path.join(blocks_sprites, 'top-left-wood.png'),
-                        os.path.join(blocks_sprites, 'top-right-wood.png')],
-                'walls': [os.path.join(blocks_sprites, 'wall.png'),
-                          os.path.join(blocks_sprites, 'wall-b.png')],
-                'windows': [os.path.join(blocks_sprites, 'window.png'),
-                            os.path.join(blocks_sprites, 'window-bars.png')]}
+BLOCK_ASSETS = {'ground': [os.path.join(blocks_sprites, 'ground.png')]}
 
 # ассеты для задних фонов
 BACKGROUND = os.path.join(backgrounds, 'background.bmp')
 MENU_BACKGROUND = os.path.join(backgrounds, 'menu_background.bmp')
 
 # ассеты для предметов на уровне
-# TODO сделать списочным выражением
-BARREL = os.path.join(level_items, 'barrel.png')
-CRATE = os.path.join(level_items, 'crate.png')
-CRATE_STACK = os.path.join(level_items, 'crate_stack.png')
-HOUSES = [os.path.join(level_items, 'house-a.png'),
-          os.path.join(level_items, 'house-b.png'),
-          os.path.join(level_items, 'house-c.png')]
-SIGN = os.path.join(level_items, 'sign.png')
-STREET_LAMP = os.path.join(level_items, 'street_lamp.png')
-WAGON = os.path.join(level_items, 'wagon.png')
 WELL = os.path.join(level_items, 'well.png')
 
 # ассеты для еды
@@ -133,11 +84,7 @@ FOOD = [os.path.join(heal, 'Apple.png')]
 
 # ассеты для монет
 # TODO сделать списочным выражением
-COINS = [os.path.join(coins, 'Coin_Blue.png'),
-         os.path.join(coins, 'Coin_Gold.png'),
-         os.path.join(coins, 'Coin_Green.png'),
-         os.path.join(coins, 'Coin_Purple.png'),
-         os.path.join(coins, 'Coin_Red.png')]
+COINS = [os.path.join(coins, 'Coin_Blue.png')]
 
 # ассеты для полезных/отрицательных эффектов
 # TODO сделать списочным выражением
