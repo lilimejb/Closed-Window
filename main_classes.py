@@ -1,4 +1,6 @@
 import pygame as pg
+import random
+from math import sin, radians
 
 from config import *
 
@@ -8,6 +10,7 @@ class Sprite(pg.sprite.Sprite):
     def __init__(self, x=0, y=0, size=100, speed=10, image=PLAYER_ASSETS['idle'][0]):
         super().__init__()
         self.name = 'basic_sprite'
+        self.animated = False
         self.size = size
         self.speed = speed
         self.x = x
@@ -34,10 +37,19 @@ class Solid_Block(Sprite):
 class Consumable(Sprite):
     def __init__(self, x=None, y=None, size=100, speed=10, image=BLOCK_ASSETS['ground'][0]):
         super().__init__(x, y, size, speed, image)
+        self.animated = True
+        self.ticks = random.choice(range(0, 360, 5))
+        self.forward = 1
         self.spawn = self.rect.topleft
 
     def update(self, *args):
-        pass
+        if self.ticks >= 360:
+            self.ticks -= 360
+        self.ticks += 5
+        if not self.speed:
+            return
+        not_true_y = sin(radians(self.ticks)) * self.speed
+        self.rect.y = self.spawn[1] + not_true_y
 
 
 class Camera:
@@ -77,7 +89,11 @@ class Camera:
             dx = w - self.right.rect.right
 
         for block in self.blocks:
-            block.rect = block.rect.move(dx, dy)
+            if block.animated:
+                block.rect = block.rect.move(dx, 0)
+                block.spawn = (block.spawn[0], block.spawn[1] + dy)
+            else:
+                block.rect = block.rect.move(dx, dy)
 
 
 class Animated_Sprite(Sprite):
