@@ -42,19 +42,42 @@ class Consumable(Sprite):
 
 class Camera:
     # зададим начальный сдвиг камеры
-    def __init__(self):
+    def __init__(self, player, blocks):
+        self.player = player
+        self.blocks = blocks
+        self.speed = self.player.speed_max
         self.dx = 0
         self.dy = 0
+        self.top = self.left = self.right = self.bottom = self.player
 
-    # сдвинуть объект obj на смещение камеры
-    def apply(self, obj):
-        obj.rect.x += self.dx
-        obj.rect.y += self.dy
+    def update_borders(self):
+        for block in self.blocks:
+            if block.rect.top < self.top.rect.top:
+                self.top = block
+            if block.rect.bottom > self.bottom.rect.bottom:
+                self.bottom = block
+            if block.rect.left < self.left.rect.left:
+                self.left = block
+            if block.rect.right > self.right.rect.right:
+                self.right = block
 
     # позиционировать камеру на объекте target
-    def update(self, target):
-        self.dx = -(target.rect.x + target.rect.w // 2 - WIN_SIZE[0] // 2)
-        self.dy = -(target.rect.y + target.rect.h // 2 - WIN_SIZE[1] // 2)
+    def update(self):
+        w, h = WIN_SIZE
+        dx = -(self.player.rect.x + self.player.rect.w // 2 - w // 2)
+        dy = -(self.player.rect.y + self.player.rect.h // 2 - h // 2)
+
+        if self.top.rect.top + dy > 0:
+            dy = -self.top.rect.top
+        if self.bottom.rect.bottom + dy < h:
+            dy = h - self.bottom.rect.bottom
+        if self.left.rect.left + dx > 0:
+            dx = -self.left.rect.left
+        if self.right.rect.right + dx < w:
+            dx = w - self.right.rect.right
+
+        for block in self.blocks:
+            block.rect = block.rect.move(dx, dy)
 
 
 class Animated_Sprite(Sprite):
@@ -124,4 +147,4 @@ class Animated_Sprite(Sprite):
         if self.is_flipped:
             self.image = self.flipped_images['attack'][self.frames % len(self.images['attack'])]
         else:
-            self.image = self.images['attack'][self.frames % len(self.images['attack'])]\
+            self.image = self.images['attack'][self.frames % len(self.images['attack'])]

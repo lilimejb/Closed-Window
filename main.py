@@ -29,7 +29,7 @@ class Game:
         self.menu = Menu()
         self.end_window = End_window()
         self.player = Player()
-        self.camera = Camera()
+        self.camera = None
 
         # создание экрана
         self.screen = pg.display.set_mode(WIN_SIZE)
@@ -56,7 +56,7 @@ class Game:
         # загрузка уровня
         self.current_level = 0
         self.load_map()
-        
+
         self.camera_usage = True
 
         for enemy in self.enemies:
@@ -83,14 +83,14 @@ class Game:
 
     # функция создающая группы спрайтов и экзэмпляры классов
     def load_sprites(self):
-        self.objects = pg.sprite.Group()
-        self.coins = pg.sprite.Group()
-        self.enemies = pg.sprite.Group()
-        self.spikes = pg.sprite.Group()
-        self.solid_blocks = pg.sprite.Group()
-        self.help = pg.sprite.Group()
-        self.exits = pg.sprite.Group()
-        self.buffs = pg.sprite.Group()
+        self.objects.empty()
+        self.coins.empty()
+        self.enemies.empty()
+        self.spikes.empty()
+        self.solid_blocks.empty()
+        self.help.empty()
+        self.exits.empty()
+        self.buffs.empty()
         self.load_map()
         for enemy in self.enemies:
             if enemy.name == 'bearded':
@@ -123,13 +123,10 @@ class Game:
     # функция загрузки следующего уровня
     def start_next_level(self):
         self.load_sprites()
+        self.camera.blocks = self.objects
 
     def load_map(self):
         map_path = LEVELS[self.current_level]
-        if self.current_level % 2 != 1:
-            self.camera_usage = False
-        else:
-            self.camera_usage = True
 
         with open(map_path, 'r', encoding='UTF-8') as file:
             for y, line in enumerate(file):
@@ -180,6 +177,8 @@ class Game:
                             block = Spike(*pos, image=image)
                             block.add(self.spikes)
                         block.add(self.objects)
+        self.camera = Camera(self.player, self.objects)
+        self.camera.update_borders()
 
     # обработка всех событий
     # TODO очистить ненужное
@@ -222,12 +221,7 @@ class Game:
         self.played += ms / 1000
         self.played = round(self.played, 2)
 
-        if self.camera_usage:
-            # изменяем ракурс камеры
-            self.camera.update(self.player)
-            # обновляем положение всех спрайтов
-            for obj in self.objects:
-                self.camera.apply(obj)
+        self.camera.update()
 
         game_state = self.player.update(self.jump, self.fall, self.left, self.right, self.is_attacking, ms)
         self.help.update()
