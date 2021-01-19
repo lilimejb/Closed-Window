@@ -244,7 +244,7 @@ class Game:
             self.current_level += 1
             if self.current_level > 4:
                 self.game_running = False
-                self.right = self.left = self.jump = self.fall = False
+                self.right = self.left = self.jump = self.fall = self.is_attacking = False
             else:
                 self.start_next_level()
         if game_state == 'dead':

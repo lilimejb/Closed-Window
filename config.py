@@ -2,7 +2,7 @@ import os
 
 # константы
 TILE_SIZE = 64
-WIN_SIZE = (16 * TILE_SIZE, 9 * TILE_SIZE)
+WIN_SIZE = (1080, 720)
 FPS = 60
 GRAVITY = .5
 

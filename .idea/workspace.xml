@@ -23,177 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37043318-4c84-473d-b7ac-3851f2a3e807" name="Default Changelist" comment="финальное окно и баг фикс">
-      <change afterPath="$PROJECT_DIR$/zakritoe.pptx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/INFO.docx" beforeDir="false" afterPath="$PROJECT_DIR$/INFO.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/artefacts/Gear.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/ground-b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/ground-corner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/ground-right-corner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/ground-shadow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/ground-wall-b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/ground-wall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/ground-wood-legs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/left-corner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/left-roof.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/left-slope.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/right-corner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/right-roof.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/right-slope.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/roof.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/shadow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/slope.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/stairs-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/stairs-mirror-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/stairs-mirror-right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/stairs-mirror.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/stairs-right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/stairs-wall-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/stairs-wall-mirror-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/stairs-wall-mirror-right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/stairs-wall-mirror.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/stairs-wall-right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/stairs-wall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/stairs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/top-left-wood.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/top-right-wood.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/top-wood.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/wall-b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/wall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/window-bars.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/window.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/blocks_sprites/wood-legs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/buffs/Damage_boost.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/coins/Coin_Gold.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/coins/Coin_Green.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/coins/Coin_Purple.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/coins/Coin_Red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/AppleWorm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Avocado.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Bacon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Beer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Boar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Bread.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Brownie.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Bug.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Cheese.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Cherry.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Chicken.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/ChickenLeg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Cookie.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/DragonFruit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Eggplant.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Eggs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Fish.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/FishFillet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/FishSteak.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Grub.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Grubs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Honey.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Honeycomb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Jam.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Jerky.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Lemon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Marmalade.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/MelonCantaloupe.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/MelonHoneydew.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/MelonWater.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Moonshine.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Olive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Onion.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Peach.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/PepperGreen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/PepperRed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Pepperoni.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Pickle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/PickledEggs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/PieApple.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/PieLemon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/PiePumpkin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Pineapple.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Potato.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/PotatoRed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Pretzel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Ribs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Roll.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Saki.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Sardines.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Sashimi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Sausages.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Shrimp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Steak.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Stein.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Strawberry.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Sushi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Tart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Tomato.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Turnip.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Waffles.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Whiskey.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/consumable/heal/Wine.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/SlimeA.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/hat_man/hat-man-idle/hat-man-idle-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/hat_man/hat-man-idle/hat-man-idle-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/hat_man/hat-man-idle/hat-man-idle-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/hat_man/hat-man-idle/hat-man-idle-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/hat_man/hat-man-walk/hat-man-walk-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/hat_man/hat-man-walk/hat-man-walk-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/hat_man/hat-man-walk/hat-man-walk-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/hat_man/hat-man-walk/hat-man-walk-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/hat_man/hat-man-walk/hat-man-walk-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/hat_man/hat-man-walk/hat-man-walk-6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/old_man/oldman-idle/oldman-idle-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/old_man/oldman-idle/oldman-idle-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/old_man/oldman-idle/oldman-idle-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/old_man/oldman-idle/oldman-idle-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/old_man/oldman-idle/oldman-idle-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/old_man/oldman-idle/oldman-idle-6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/old_man/oldman-idle/oldman-idle-7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/old_man/oldman-idle/oldman-idle-8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/old_man/oldman-walk/oldman-walk-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/old_man/oldman-walk/oldman-walk-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/old_man/oldman-walk/oldman-walk-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/old_man/oldman-walk/oldman-walk-12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/old_man/oldman-walk/oldman-walk-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/old_man/oldman-walk/oldman-walk-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/old_man/oldman-walk/oldman-walk-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/old_man/oldman-walk/oldman-walk-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/old_man/oldman-walk/oldman-walk-6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/old_man/oldman-walk/oldman-walk-7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/old_man/oldman-walk/oldman-walk-8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/old_man/oldman-walk/oldman-walk-9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/woman/woman-idle/woman-idle-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/woman/woman-idle/woman-idle-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/woman/woman-idle/woman-idle-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/woman/woman-idle/woman-idle-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/woman/woman-idle/woman-idle-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/woman/woman-idle/woman-idle-6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/woman/woman-idle/woman-idle-7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/woman/woman-walk/woman-walk-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/woman/woman-walk/woman-walk-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/woman/woman-walk/woman-walk-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/woman/woman-walk/woman-walk-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/woman/woman-walk/woman-walk-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemies/woman/woman-walk/woman-walk-6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Take_hit/take_hit1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Take_hit/take_hit2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Take_hit/take_hit3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/hero_sprites/Take_hit/take_hit4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/level_items/Chest_Blue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/level_items/Chest_Gold.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/level_items/Chest_Green.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/level_items/Chest_Purple.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/level_items/Chest_Red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/level_items/barrel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/level_items/crate-stack.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/level_items/crate.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/level_items/house-a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/level_items/house-b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/level_items/house-c.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/level_items/sign.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/level_items/street-lamp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/level_items/wagon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_classes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/lvl1" beforeDir="false" afterPath="$PROJECT_DIR$/levels/lvl1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/lvl2" beforeDir="false" afterPath="$PROJECT_DIR$/levels/lvl2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/lvl3" beforeDir="false" afterPath="$PROJECT_DIR$/levels/lvl3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levels/lvl5" beforeDir="false" afterPath="$PROJECT_DIR$/levels/lvl5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -493,5 +329,23 @@
     <MESSAGE value="камера и уровни для неё" />
     <MESSAGE value="финальное окно и баг фикс" />
     <option name="LAST_COMMIT_MESSAGE" value="финальное окно и баг фикс" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1515" height="151" key="GridCell.Tab.0.bottom" timestamp="1611047367373">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="151" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611047367373" />
+    <state width="1515" height="151" key="GridCell.Tab.0.center" timestamp="1611047367372">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="151" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1611047367372" />
+    <state width="1515" height="151" key="GridCell.Tab.0.left" timestamp="1611047367372">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="151" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1611047367372" />
+    <state width="1515" height="151" key="GridCell.Tab.0.right" timestamp="1611047367373">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="151" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1611047367373" />
   </component>
 </project>
