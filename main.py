@@ -217,7 +217,7 @@ class Game:
 
     def update(self):
         # установка FPS
-        ms = clock.tick(FPS)
+        ms = clock.tick(60)
         self.played += ms / 1000
         self.played = round(self.played, 2)
 
