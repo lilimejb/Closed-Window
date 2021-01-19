@@ -22,10 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37043318-4c84-473d-b7ac-3851f2a3e807" name="Default Changelist" comment="Цель и баг фикс">
-      <change afterPath="$PROJECT_DIR$/.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="37043318-4c84-473d-b7ac-3851f2a3e807" name="Default Changelist" comment="добавление requirements" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +54,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../yandex_dash" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.main">
@@ -303,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611051455855</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="добавление requirements">
+      <created>1611051930721</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1611051930721</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -339,9 +343,18 @@
     <MESSAGE value="финальное окно и баг фикс" />
     <MESSAGE value="баг фикс" />
     <MESSAGE value="Цель и баг фикс" />
-    <option name="LAST_COMMIT_MESSAGE" value="Цель и баг фикс" />
+    <MESSAGE value="добавление requirements" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавление requirements" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="147" y="95" width="1242" height="664" key="DiffContextDialog" timestamp="1611051942669">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="147" y="95" width="1242" height="664" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1611051942669" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1611052035165">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1611052035165" />
     <state width="1515" height="151" key="GridCell.Tab.0.bottom" timestamp="1611051722532">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -362,9 +375,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1611051721579" />
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1611051472999">
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1611051981026">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1611051472999" />
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1611051981026" />
   </component>
 </project>
