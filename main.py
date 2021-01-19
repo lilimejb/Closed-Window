@@ -267,12 +267,14 @@ class Game:
     # фунция запуска приложения
     def global_run(self):
         while self.running:
+            self.played = 0
             self.menu.running = True
             down = self.start_menu()
             self.restart()
             if down == 'all down':
                 break
             else:
+                self.played = 0
                 self.game_running = True
                 self.game_run()
             if self.current_level > 4:

@@ -22,14 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37043318-4c84-473d-b7ac-3851f2a3e807" name="Default Changelist" comment="финальное окно и баг фикс">
+    <list default="true" id="37043318-4c84-473d-b7ac-3851f2a3e807" name="Default Changelist" comment="баг фикс">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/lvl1" beforeDir="false" afterPath="$PROJECT_DIR$/levels/lvl1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/lvl2" beforeDir="false" afterPath="$PROJECT_DIR$/levels/lvl2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/lvl3" beforeDir="false" afterPath="$PROJECT_DIR$/levels/lvl3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/lvl5" beforeDir="false" afterPath="$PROJECT_DIR$/levels/lvl5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INFO.docx" beforeDir="false" afterPath="$PROJECT_DIR$/INFO.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zakritoe.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/zakritoe.pptx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -294,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610860102369</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="баг фикс">
+      <created>1611048183513</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1611048183513</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -328,24 +332,29 @@
     <MESSAGE value="лучше атака" />
     <MESSAGE value="камера и уровни для неё" />
     <MESSAGE value="финальное окно и баг фикс" />
-    <option name="LAST_COMMIT_MESSAGE" value="финальное окно и баг фикс" />
+    <MESSAGE value="баг фикс" />
+    <option name="LAST_COMMIT_MESSAGE" value="баг фикс" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1515" height="151" key="GridCell.Tab.0.bottom" timestamp="1611047367373">
+    <state width="1515" height="151" key="GridCell.Tab.0.bottom" timestamp="1611051405055">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="151" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611047367373" />
-    <state width="1515" height="151" key="GridCell.Tab.0.center" timestamp="1611047367372">
+    <state width="1515" height="151" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611051405055" />
+    <state width="1515" height="151" key="GridCell.Tab.0.center" timestamp="1611051405054">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="151" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1611047367372" />
-    <state width="1515" height="151" key="GridCell.Tab.0.left" timestamp="1611047367372">
+    <state width="1515" height="151" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1611051405054" />
+    <state width="1515" height="151" key="GridCell.Tab.0.left" timestamp="1611051405054">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="151" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1611047367372" />
-    <state width="1515" height="151" key="GridCell.Tab.0.right" timestamp="1611047367373">
+    <state width="1515" height="151" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1611051405054" />
+    <state width="1515" height="151" key="GridCell.Tab.0.right" timestamp="1611051405055">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="151" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1611047367373" />
+    <state width="1515" height="151" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1611051405055" />
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1611048188254">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1611048188254" />
   </component>
 </project>
